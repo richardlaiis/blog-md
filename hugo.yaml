@@ -1,0 +1,40 @@
+baseURL: https://richardlaiis.github.io/
+languageCode: en-us
+title: laiyuchi 的破紙箱
+theme: ["PaperMod"]
+
+menu:
+  main:
+    - identifier: categories
+      name: categories
+      url: /categories/
+      weight: 10
+    - identifier: tags
+      name: tags
+      url: /tags/
+      weight: 20
+    - identifier: about
+      name: about
+      url: /about/
+      weight: 30
+    - identifier: archives
+      name: archives
+      url: /archives/
+
+params:
+  homeInfoParams:
+    Title: Hi, welcome to my space
+    Content: 這裡只是些廢廢的文章，有空看看吧～
+
+  socialIcons: # optional
+    - name: "facebook"
+      url: "https://www.facebook.com/richard.lai.476003"
+    - name: "github"
+      url: "https://github.com/richardlaiis"
+    - name: "linkedin"
+      url: "https://www.linkedin.com/in/yu-chi-lai-8a14883a6/"
+  ShowCodeCopyButtons: true
+
+taxonomies:
+  category: categories
+  tag: tags

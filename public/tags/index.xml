@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on laiyuchi 的破紙箱</title>
+    <link>https://richardlaiis.github.io/tags/</link>
+    <description>Recent content in Tags on laiyuchi 的破紙箱</description>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 30 Jan 2026 16:42:54 +0800</lastBuildDate>
+    <atom:link href="https://richardlaiis.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hehe</title>
+      <link>https://richardlaiis.github.io/tags/hehe/</link>
+      <pubDate>Fri, 30 Jan 2026 16:42:54 +0800</pubDate>
+      <guid>https://richardlaiis.github.io/tags/hehe/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hihihihihi</title>
+      <link>https://richardlaiis.github.io/tags/hihihihihi/</link>
+      <pubDate>Fri, 30 Jan 2026 16:42:54 +0800</pubDate>
+      <guid>https://richardlaiis.github.io/tags/hihihihihi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Laziness</title>
+      <link>https://richardlaiis.github.io/tags/laziness/</link>
+      <pubDate>Fri, 30 Jan 2026 16:42:54 +0800</pubDate>
+      <guid>https://richardlaiis.github.io/tags/laziness/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

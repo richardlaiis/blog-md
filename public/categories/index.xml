@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Categories on laiyuchi 的破紙箱</title>
+    <link>https://richardlaiis.github.io/categories/</link>
+    <description>Recent content in Categories on laiyuchi 的破紙箱</description>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Feb 2026 08:50:58 +0800</lastBuildDate>
+    <atom:link href="https://richardlaiis.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LeetCode</title>
+      <link>https://richardlaiis.github.io/categories/leetcode/</link>
+      <pubDate>Sun, 01 Feb 2026 08:50:58 +0800</pubDate>
+      <guid>https://richardlaiis.github.io/categories/leetcode/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Smile</title>
+      <link>https://richardlaiis.github.io/categories/smile/</link>
+      <pubDate>Fri, 30 Jan 2026 16:42:54 +0800</pubDate>
+      <guid>https://richardlaiis.github.io/categories/smile/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Uwu</title>
+      <link>https://richardlaiis.github.io/categories/uwu/</link>
+      <pubDate>Fri, 30 Jan 2026 16:42:54 +0800</pubDate>
+      <guid>https://richardlaiis.github.io/categories/uwu/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
