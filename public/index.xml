@@ -6,8 +6,44 @@
     <description>Recent content on laiyuchi 的破紙箱</description>
     <generator>Hugo -- 0.154.5</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 01 Feb 2026 08:50:58 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 02 Feb 2026 08:52:21 +0800</lastBuildDate>
     <atom:link href="https://richardlaiis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 1509 - Minimum Difference Between Largest and Smallest Value in Three Moves</title>
+      <link>https://richardlaiis.github.io/posts/leetcode-minimum-difference-between-largest-and-smallest-value-in-three-moves/</link>
+      <pubDate>Mon, 02 Feb 2026 08:52:21 +0800</pubDate>
+      <guid>https://richardlaiis.github.io/posts/leetcode-minimum-difference-between-largest-and-smallest-value-in-three-moves/</guid>
+      <description>&lt;h2 id=&#34;approach&#34;&gt;Approach&lt;/h2&gt;
+&lt;p&gt;有 4 種方式去移除三個元素，在將陣列由小至大排序後：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;移除前三個元素&lt;/li&gt;
+&lt;li&gt;移除前兩個元素，以及尾端一個元素&lt;/li&gt;
+&lt;li&gt;移除第一個元素，以及尾端兩個元素&lt;/li&gt;
+&lt;li&gt;移除最後面三個元素&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;而這四種 case 最大最小值的 difference 很容易就可以推出來了，如程式碼所示。&lt;/p&gt;
+&lt;h2 id=&#34;code&#34;&gt;Code&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Solution&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; minDifference(vector&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;amp;&lt;/span&gt; nums) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        sort(nums.begin(), nums.end());
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; n &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; nums.size();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (n &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; res &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2e9&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; l &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, r &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; n&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;; l &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;; l&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;, r&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            res &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; min(res, nums[r]&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;nums[l]);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; res;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;untitled&#34;&gt;untitled&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;常常，我們誰不都是老犯同一個毛病，以一種自以為是並且蠻橫的方式去愛眼前的人，卻不知道眼前的人所渴望的，有時候不過是一個善意的牽引，一場低調的擺渡和一份體貼的成全，就好像我們根本不知道，張國榮在決定放棄對紅塵聲色的眷戀從酒店墜下之前，是如何地將自己關押在情緒的寒流裡哆嗦，在風光背後，摸索著比黑暗更黑暗的黑暗，卻永遠等不到詭異的天色，也許很快就會破曉。── 范俊奇《鏤空與浮雕》(星之全蝕)&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
     <item>
       <title>Leetcode 3010 - Divide an Array Into Subarrays With Minimum Cost I</title>
       <link>https://richardlaiis.github.io/posts/leetcode-divide-an-array-into-subarrays-with-minimum-cost-i/</link>

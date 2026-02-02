@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Posts | laiyuchi 的破紙箱</title>
+<title>Murmur | laiyuchi 的破紙箱</title>
 <meta name="keywords" content="">
-<meta name="description" content="Posts - laiyuchi 的破紙箱">
+<meta name="description" content="">
 <meta name="author" content="">
-<link rel="canonical" href="https://richardlaiis.github.io/posts/">
+<link rel="canonical" href="https://richardlaiis.github.io/tags/murmur/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://richardlaiis.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://richardlaiis.github.io/favicon-16x16.png">
@@ -18,8 +18,8 @@
 <link rel="mask-icon" href="https://richardlaiis.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://richardlaiis.github.io/posts/index.xml" title="rss">
-<link rel="alternate" hreflang="en" href="https://richardlaiis.github.io/posts/">
+<link rel="alternate" type="application/rss+xml" href="https://richardlaiis.github.io/tags/murmur/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="https://richardlaiis.github.io/tags/murmur/">
 <noscript>
     <style>
         #theme-toggle,
@@ -71,30 +71,15 @@
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script><meta property="og:url" content="https://richardlaiis.github.io/posts/">
+</script><meta property="og:url" content="https://richardlaiis.github.io/tags/murmur/">
   <meta property="og:site_name" content="laiyuchi 的破紙箱">
-  <meta property="og:title" content="Posts">
+  <meta property="og:title" content="Murmur">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Posts">
+<meta name="twitter:title" content="Murmur">
 <meta name="twitter:description" content="">
 
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://richardlaiis.github.io/posts/"
-    }
-  ]
-}
-</script>
 </head>
 <body class="list" id="top">
     <header class="header">
@@ -151,11 +136,11 @@
 <main class="main"> 
 <header class="page-header">
   <h1>
-    Posts
+    Murmur
   </h1>
 </header>
 
-<article class="post-entry"> 
+<article class="post-entry tag-entry"> 
   <header class="entry-header">
     <h2 class="entry-hint-parent">Leetcode 1509 - Minimum Difference Between Largest and Smallest Value in Three Moves
     </h2>
@@ -168,51 +153,6 @@ Code class Solution { public: int minDifference(vector&lt;int&gt;&amp; nums) { s
   </div>
   <footer class="entry-footer"><span title='2026-02-02 08:52:21 +0800 CST'>February 2, 2026</span></footer>
   <a class="entry-link" aria-label="post link to Leetcode 1509 - Minimum Difference Between Largest and Smallest Value in Three Moves" href="https://richardlaiis.github.io/posts/leetcode-minimum-difference-between-largest-and-smallest-value-in-three-moves/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Leetcode 3010 - Divide an Array Into Subarrays With Minimum Cost I
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Approach To minimize the total cost, we need to partition the array using the three smallest elements. However, since the first element is always included, the final answer is simply the first element plus the two smallest elements from the rest of the array.
-In my code, I sort the array (excluding the first element) using built-in sort() function, but there might be other methods with better time complexity.
-Code class Solution { public: int minimumCost(vector&lt;int&gt;&amp; nums) { sort(nums.begin() &#43; 1, nums.end()); return nums[0] &#43; nums[1] &#43; nums[2]; } }; uwu 我把 richardlaiis.csie.org (新的網址) 綁到 richardlaiis.github.io (原網址) 了，比我想像中的簡單很多～ 好希望趕快開學;)
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-02-01 08:50:58 +0800 CST'>February 1, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to Leetcode 3010 - Divide an Array Into Subarrays With Minimum Cost I" href="https://richardlaiis.github.io/posts/leetcode-divide-an-array-into-subarrays-with-minimum-cost-i/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Leetcode 744 - Find Smallest Letter Greater Than Target
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Approach Binary search on the location of first letter greater than target. (Using built-in upperbound function in C&#43;&#43; is good as well)
-Solution class Solution { public: char nextGreatestLetter(vector&lt;char&gt;&amp; letters, char target) { int lo = 0, hi = letters.size() - 1; char res = letters[0]; while (lo &lt;= hi) { int mid = (lo &#43; hi) / 2; if (letters[mid]-target &gt; 0) res = letters[mid], hi = mid-1; else lo = mid&#43;1; } return res; } }; 心得 之後打算把 LeetCode 每日問題的解法丟上來，希望有朝一日能進 Google X)
-話說要怎麼幫 github page 設定 custom domain，我想好好利用系上提供的免費的 csie.org QQ 但不知道為什麼弄不好，打 A Record 會是爛的，希望改成 CNAME 後 DNS checking 能成功XD
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-31 09:38:05 +0800 CST'>January 31, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to Leetcode 744 - Find Smallest Letter Greater Than Target" href="https://richardlaiis.github.io/posts/leetcode-find-smallest-letter-greater-than-target/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Myfirstpost
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>hahahahahahaha ehehehehehe
-破房 我是一個 GPA 3.4 的可悲台大資工大二生，阿哈哈哈哈哈哈。
-教授這裡風好大
-code #include &lt;stdio.h&gt; int main() { printf(&#34;Hello, world!\n&#34;); } </p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-30 16:42:54 +0800 CST'>January 30, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to Myfirstpost" href="https://richardlaiis.github.io/posts/myfirstpost/"></a>
 </article>
     </main>
     
