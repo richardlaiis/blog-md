@@ -189,6 +189,19 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Leetcode 3379 - Transformed Array
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Approach 基本上照著題目的敘述寫就好了，很簡單。不過取模的時候要注意，C的模運算不一定會是正的，所以寫的時候要避免產生負的index，我竟然不知道這件事情qwq
+Code int* constructTransformedArray(int* nums, int numsSize, int* returnSize) { *returnSize = numsSize; int* result = (int*)malloc(sizeof(int) * numsSize); for (int i = 0; i &lt; numsSize; i&#43;&#43;) { result[i] = nums[((i &#43; nums[i])%numsSize &#43; numsSize) % numsSize]; } return result; } </p>
+  </div>
+  <footer class="entry-footer"><span title='2026-02-05 08:24:06 +0800 CST'>February 5, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to Leetcode 3379 - Transformed Array" href="https://richardlaiis.github.io/posts/leetcode-3379-transformed-array/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">LeetCode 3637 - Trionic Array I
     </h2>
   </header>
