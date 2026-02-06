@@ -20,11 +20,20 @@ menu:
     - identifier: archives
       name: archives
       url: /archives/
+    - identifier: search
+      name: search
+      url: /search/
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search
 
 params:
   homeInfoParams:
     Title: Hi, welcome to my space
-    Content: 這裡只是些廢廢的文章，有空看看吧～
+    Content: 我是 Richard Lai，這裡只是些廢廢的文章，有空看看吧～
 
   socialIcons: # optional
     - name: "facebook"
@@ -33,6 +42,8 @@ params:
       url: "https://github.com/richardlaiis"
     - name: "linkedin"
       url: "https://www.linkedin.com/in/yu-chi-lai-8a14883a6/"
+    - name: "email"
+      url: "mailto:richardlaiis@proton.me"
   ShowCodeCopyButtons: true
 
 taxonomies:

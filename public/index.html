@@ -20,6 +20,7 @@
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <link rel="alternate" type="application/rss+xml" href="https://richardlaiis.github.io/index.xml" title="rss">
+<link rel="alternate" type="application/json" href="https://richardlaiis.github.io/index.json" title="json">
 <link rel="alternate" hreflang="en" href="https://richardlaiis.github.io/">
 <noscript>
     <style>
@@ -90,7 +91,7 @@
   "description": "",
   "logo": "https://richardlaiis.github.io/favicon.ico",
   "sameAs": [
-      "https://www.facebook.com/richard.lai.476003", "https://github.com/richardlaiis", "https://www.linkedin.com/in/yu-chi-lai-8a14883a6/"
+      "https://www.facebook.com/richard.lai.476003", "https://github.com/richardlaiis", "https://www.linkedin.com/in/yu-chi-lai-8a14883a6/", "mailto:richardlaiis@proton.me"
   ]
 }
 </script>
@@ -144,6 +145,11 @@
                     <span>archives</span>
                 </a>
             </li>
+            <li>
+                <a href="https://richardlaiis.github.io/search/" title="search (Alt &#43; /)" accesskey=/>
+                    <span>search</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
@@ -153,7 +159,7 @@
         <h1>Hi, welcome to my space</h1>
     </header>
     <div class="entry-content">
-        這裡只是些廢廢的文章，有空看看吧～
+        我是 Richard Lai，這裡只是些廢廢的文章，有空看看吧～
     </div>
     <footer class="entry-footer">
         <div class="social-icons" >
@@ -182,6 +188,14 @@
     <circle cx="4" cy="4" r="2"></circle>
 </svg>
     </a>
+    <a href="mailto:richardlaiis@proton.me" target="_blank" rel="noopener noreferrer me"
+        title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 21" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+    <polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+    </a>
 </div>
 
     </footer>
@@ -194,7 +208,7 @@
   </header>
   <div class="entry-content">
     <p>Approach Two pointers &#43; sorting
-Complexity Time complexity: O(nlogn) The sorting takes O(nlogn), and the two pointer process takes O(n). Space complexity: O(n) or O(logn) This includes the stack space required by the sorting process, since built-in sorting implementations typically use a variant of quicksort or timsort. Sorry 我不知道怎麼弄好 mathjax 的渲染 QwQ
+Complexity Time complexity: O(nlogn) The sorting takes O(nlogn), and the two pointer process takes O(n). Using binary search or radix sort might optimize the execution time a little bit. Space complexity: O(n) or O(logn) This includes the stack space required by the sorting process, since built-in sorting implementations typically use a variant of quicksort or timsort. Sorry 我不知道怎麼弄好 mathjax 的渲染 QwQ
 Code class Solution { public: int minRemoval(vector&lt;int&gt;&amp; nums, int k) { sort(nums.begin(), nums.end()); int n = nums.size(); int j = 0, ans = n; for (int i = 0; i &lt; n; i&#43;&#43;) { while (j &lt; n &amp;&amp; nums[j] &lt;= 1LL*nums[i] * k) j&#43;&#43;; ans = min(ans, n-j&#43;i); } return ans; } }; </p>
   </div>
   <footer class="entry-footer"><span title='2026-02-06 09:51:25 +0800 CST'>February 6, 2026</span></footer>

@@ -145,6 +145,11 @@
                     <span>archives</span>
                 </a>
             </li>
+            <li>
+                <a href="https://richardlaiis.github.io/search/" title="search (Alt &#43; /)" accesskey=/>
+                    <span>search</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
@@ -162,7 +167,7 @@
   </header>
   <div class="entry-content">
     <p>Approach Two pointers &#43; sorting
-Complexity Time complexity: O(nlogn) The sorting takes O(nlogn), and the two pointer process takes O(n). Space complexity: O(n) or O(logn) This includes the stack space required by the sorting process, since built-in sorting implementations typically use a variant of quicksort or timsort. Sorry 我不知道怎麼弄好 mathjax 的渲染 QwQ
+Complexity Time complexity: O(nlogn) The sorting takes O(nlogn), and the two pointer process takes O(n). Using binary search or radix sort might optimize the execution time a little bit. Space complexity: O(n) or O(logn) This includes the stack space required by the sorting process, since built-in sorting implementations typically use a variant of quicksort or timsort. Sorry 我不知道怎麼弄好 mathjax 的渲染 QwQ
 Code class Solution { public: int minRemoval(vector&lt;int&gt;&amp; nums, int k) { sort(nums.begin(), nums.end()); int n = nums.size(); int j = 0, ans = n; for (int i = 0; i &lt; n; i&#43;&#43;) { while (j &lt; n &amp;&amp; nums[j] &lt;= 1LL*nums[i] * k) j&#43;&#43;; ans = min(ans, n-j&#43;i); } return ans; } }; </p>
   </div>
   <footer class="entry-footer"><span title='2026-02-06 09:51:25 +0800 CST'>February 6, 2026</span></footer>

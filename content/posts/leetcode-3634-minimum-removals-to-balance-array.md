@@ -8,6 +8,7 @@ Two pointers + sorting
 ## Complexity
 + Time complexity: `O(nlogn)`
     + The sorting takes `O(nlogn)`, and the two pointer process takes `O(n)`.
+    + Using binary search or radix sort might optimize the execution time a little bit.
 + Space complexity: `O(n)` or `O(logn)`
     + This includes the stack space required by the sorting process, since built-in sorting implementations typically use a variant of quicksort or [timsort](https://en.wikipedia.org/wiki/Timsort).
 

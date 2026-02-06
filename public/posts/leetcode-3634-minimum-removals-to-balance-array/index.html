@@ -14,6 +14,7 @@ Complexity
 Time complexity: O(nlogn)
 
 The sorting takes O(nlogn), and the two pointer process takes O(n).
+Using binary search or radix sort might optimize the execution time a little bit.
 
 
 Space complexity: O(n) or O(logn)
@@ -104,7 +105,7 @@ public:
   <meta property="og:site_name" content="laiyuchi 的破紙箱">
   <meta property="og:title" content="Leetcode 3634 - Minimum Removals to Balance Array">
   <meta property="og:description" content="Approach Two pointers &#43; sorting
-Complexity Time complexity: O(nlogn) The sorting takes O(nlogn), and the two pointer process takes O(n). Space complexity: O(n) or O(logn) This includes the stack space required by the sorting process, since built-in sorting implementations typically use a variant of quicksort or timsort. Sorry 我不知道怎麼弄好 mathjax 的渲染 QwQ
+Complexity Time complexity: O(nlogn) The sorting takes O(nlogn), and the two pointer process takes O(n). Using binary search or radix sort might optimize the execution time a little bit. Space complexity: O(n) or O(logn) This includes the stack space required by the sorting process, since built-in sorting implementations typically use a variant of quicksort or timsort. Sorry 我不知道怎麼弄好 mathjax 的渲染 QwQ
 Code class Solution { public: int minRemoval(vector&lt;int&gt;&amp; nums, int k) { sort(nums.begin(), nums.end()); int n = nums.size(); int j = 0, ans = n; for (int i = 0; i &lt; n; i&#43;&#43;) { while (j &lt; n &amp;&amp; nums[j] &lt;= 1LL*nums[i] * k) j&#43;&#43;; ans = min(ans, n-j&#43;i); } return ans; } }; ">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
@@ -120,6 +121,7 @@ Complexity
 Time complexity: O(nlogn)
 
 The sorting takes O(nlogn), and the two pointer process takes O(n).
+Using binary search or radix sort might optimize the execution time a little bit.
 
 
 Space complexity: O(n) or O(logn)
@@ -172,12 +174,12 @@ public:
   "@type": "BlogPosting",
   "headline": "Leetcode 3634 - Minimum Removals to Balance Array",
   "name": "Leetcode 3634 - Minimum Removals to Balance Array",
-  "description": "Approach Two pointers + sorting\nComplexity Time complexity: O(nlogn) The sorting takes O(nlogn), and the two pointer process takes O(n). Space complexity: O(n) or O(logn) This includes the stack space required by the sorting process, since built-in sorting implementations typically use a variant of quicksort or timsort. Sorry 我不知道怎麼弄好 mathjax 的渲染 QwQ\nCode class Solution { public: int minRemoval(vector\u0026lt;int\u0026gt;\u0026amp; nums, int k) { sort(nums.begin(), nums.end()); int n = nums.size(); int j = 0, ans = n; for (int i = 0; i \u0026lt; n; i++) { while (j \u0026lt; n \u0026amp;\u0026amp; nums[j] \u0026lt;= 1LL*nums[i] * k) j++; ans = min(ans, n-j+i); } return ans; } }; ",
+  "description": "Approach Two pointers + sorting\nComplexity Time complexity: O(nlogn) The sorting takes O(nlogn), and the two pointer process takes O(n). Using binary search or radix sort might optimize the execution time a little bit. Space complexity: O(n) or O(logn) This includes the stack space required by the sorting process, since built-in sorting implementations typically use a variant of quicksort or timsort. Sorry 我不知道怎麼弄好 mathjax 的渲染 QwQ\nCode class Solution { public: int minRemoval(vector\u0026lt;int\u0026gt;\u0026amp; nums, int k) { sort(nums.begin(), nums.end()); int n = nums.size(); int j = 0, ans = n; for (int i = 0; i \u0026lt; n; i++) { while (j \u0026lt; n \u0026amp;\u0026amp; nums[j] \u0026lt;= 1LL*nums[i] * k) j++; ans = min(ans, n-j+i); } return ans; } }; ",
   "keywords": [
     
   ],
-  "articleBody": "Approach Two pointers + sorting\nComplexity Time complexity: O(nlogn) The sorting takes O(nlogn), and the two pointer process takes O(n). Space complexity: O(n) or O(logn) This includes the stack space required by the sorting process, since built-in sorting implementations typically use a variant of quicksort or timsort. Sorry 我不知道怎麼弄好 mathjax 的渲染 QwQ\nCode class Solution { public: int minRemoval(vector\u003cint\u003e\u0026 nums, int k) { sort(nums.begin(), nums.end()); int n = nums.size(); int j = 0, ans = n; for (int i = 0; i \u003c n; i++) { while (j \u003c n \u0026\u0026 nums[j] \u003c= 1LL*nums[i] * k) j++; ans = min(ans, n-j+i); } return ans; } }; ",
-  "wordCount" : "106",
+  "articleBody": "Approach Two pointers + sorting\nComplexity Time complexity: O(nlogn) The sorting takes O(nlogn), and the two pointer process takes O(n). Using binary search or radix sort might optimize the execution time a little bit. Space complexity: O(n) or O(logn) This includes the stack space required by the sorting process, since built-in sorting implementations typically use a variant of quicksort or timsort. Sorry 我不知道怎麼弄好 mathjax 的渲染 QwQ\nCode class Solution { public: int minRemoval(vector\u003cint\u003e\u0026 nums, int k) { sort(nums.begin(), nums.end()); int n = nums.size(); int j = 0, ans = n; for (int i = 0; i \u003c n; i++) { while (j \u003c n \u0026\u0026 nums[j] \u003c= 1LL*nums[i] * k) j++; ans = min(ans, n-j+i); } return ans; } }; ",
+  "wordCount" : "120",
   "inLanguage": "en",
   "datePublished": "2026-02-06T09:51:25+08:00",
   "dateModified": "2026-02-06T09:51:25+08:00",
@@ -245,6 +247,11 @@ public:
                     <span>archives</span>
                 </a>
             </li>
+            <li>
+                <a href="https://richardlaiis.github.io/search/" title="search (Alt &#43; /)" accesskey=/>
+                    <span>search</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
@@ -267,6 +274,7 @@ public:
 <li>Time complexity: <code>O(nlogn)</code>
 <ul>
 <li>The sorting takes <code>O(nlogn)</code>, and the two pointer process takes <code>O(n)</code>.</li>
+<li>Using binary search or radix sort might optimize the execution time a little bit.</li>
 </ul>
 </li>
 <li>Space complexity: <code>O(n)</code> or <code>O(logn)</code>

@@ -20,6 +20,7 @@
 &lt;li&gt;Time complexity: &lt;code&gt;O(nlogn)&lt;/code&gt;
 &lt;ul&gt;
 &lt;li&gt;The sorting takes &lt;code&gt;O(nlogn)&lt;/code&gt;, and the two pointer process takes &lt;code&gt;O(n)&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Using binary search or radix sort might optimize the execution time a little bit.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Space complexity: &lt;code&gt;O(n)&lt;/code&gt; or &lt;code&gt;O(logn)&lt;/code&gt;
