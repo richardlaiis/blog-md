@@ -203,6 +203,21 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Leetcode 3719 - Longest Balanced Subarray I
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Intuition Just brute force as the hints said, but unfortunately I got TLE, so this method is too slow QAQ
+而且這其實也是錯的，進到 inner loop 前也要把 nums[i] 加入 odd 或 even，我忘了加。
+class Solution { public: int longestBalanced(vector&lt;int&gt;&amp; nums) { int n = nums.size(); int ans = 0; for (int i = 0; i &lt; n-1; i&#43;&#43;) { for (int j = i&#43;1; j &lt; n; j&#43;&#43;) { unordered_set&lt;int&gt; odd, even; for (int k = i; k &lt;= j; k&#43;&#43;) { if (nums[k] &amp; 1) odd.insert(nums[k]); else even.insert(nums[k]); } if (odd.size() == even.size()) ans = max(ans, j-i&#43;1); } } return ans; } }; Approach 一樣是暴力，只是紀錄奇偶元素數量的 set 可以被沿用。（然後用 hash map 應該會跑得比較快，不過一樣可以過，所以我懶得改 :p）
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-02-10 09:34:51 +0800 CST'>February 10, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to Leetcode 3719 - Longest Balanced Subarray I" href="https://richardlaiis.github.io/posts/leetcode-3719-longest-balanced-subarray-i/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Leetcode 1382 - Balance a Binary Search Tree
     </h2>
   </header>

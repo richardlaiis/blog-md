@@ -2,6 +2,10 @@
 date: '2026-02-09T09:17:27+08:00'
 draft: false
 title: 'Leetcode 1382 - Balance a Binary Search Tree'
+tags:
+- LeetCode
+categories:
+- LeetCode
 ---
 ## 題目連結
 https://leetcode.com/problems/balance-a-binary-search-tree/

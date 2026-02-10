@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Leetcode 1382 - Balance a Binary Search Tree | laiyuchi 的破紙箱</title>
-<meta name="keywords" content="">
+<meta name="keywords" content="LeetCode">
 <meta name="description" content="題目連結
 https://leetcode.com/problems/balance-a-binary-search-tree/
 Approach
@@ -109,6 +109,7 @@ Code class Solution { private: void dfs(TreeNode* root, vector&lt;int&gt;&amp; a
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2026-02-09T09:17:27+08:00">
     <meta property="article:modified_time" content="2026-02-09T09:17:27+08:00">
+    <meta property="article:tag" content="LeetCode">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode 1382 - Balance a Binary Search Tree">
 <meta name="twitter:description" content="題目連結
@@ -170,7 +171,7 @@ public:
   "name": "Leetcode 1382 - Balance a Binary Search Tree",
   "description": "題目連結 https://leetcode.com/problems/balance-a-binary-search-tree/\nApproach 對原本的二元搜尋樹進行中序遍歷，把每個元素存入陣列中，如此一來陣列中的元素會是由小到大排序的。接著用遞迴的方式由這個陣列重建出一棵平衡的二元搜尋樹，就做好了。\nCode class Solution { private: void dfs(TreeNode* root, vector\u0026lt;int\u0026gt;\u0026amp; arr) { if (!root) return; dfs(root-\u0026gt;left, arr); arr.emplace_back(root-\u0026gt;val); dfs(root-\u0026gt;right, arr); } TreeNode* toBST(vector\u0026lt;int\u0026gt;\u0026amp;arr, int start, int end) { if (start \u0026gt; end) return NULL; int mid = (start + end) / 2; TreeNode* res = new TreeNode(arr[mid]); res-\u0026gt;left = toBST(arr, start, mid-1); res-\u0026gt;right = toBST(arr, mid+1, end); return res; } public: TreeNode* balanceBST(TreeNode* root) { vector\u0026lt;int\u0026gt; arr; dfs(root, arr); return toBST(arr, 0, arr.size() - 1); } }; ",
   "keywords": [
-    
+    "LeetCode"
   ],
   "articleBody": "題目連結 https://leetcode.com/problems/balance-a-binary-search-tree/\nApproach 對原本的二元搜尋樹進行中序遍歷，把每個元素存入陣列中，如此一來陣列中的元素會是由小到大排序的。接著用遞迴的方式由這個陣列重建出一棵平衡的二元搜尋樹，就做好了。\nCode class Solution { private: void dfs(TreeNode* root, vector\u003cint\u003e\u0026 arr) { if (!root) return; dfs(root-\u003eleft, arr); arr.emplace_back(root-\u003eval); dfs(root-\u003eright, arr); } TreeNode* toBST(vector\u003cint\u003e\u0026arr, int start, int end) { if (start \u003e end) return NULL; int mid = (start + end) / 2; TreeNode* res = new TreeNode(arr[mid]); res-\u003eleft = toBST(arr, start, mid-1); res-\u003eright = toBST(arr, mid+1, end); return res; } public: TreeNode* balanceBST(TreeNode* root) { vector\u003cint\u003e arr; dfs(root, arr); return toBST(arr, 0, arr.size() - 1); } }; ",
   "wordCount" : "80",
@@ -295,6 +296,7 @@ public:
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="https://richardlaiis.github.io/tags/leetcode/">LeetCode</a></li>
     </ul>
   </footer>
 </article>
