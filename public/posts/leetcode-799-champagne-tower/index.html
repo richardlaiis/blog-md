@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Leetcode 799 - Champagne Tower | laiyuchi 的破紙箱</title>
+<meta name="keywords" content="LeetCode, murmur">
+<meta name="description" content="Solution
+試著模擬一次倒下所有香檳後的過程。不過這作法基本上是參考官解的，但對我來說蠻神奇的，因此選擇發上來紀錄一下。
+Code
+class Solution {
+public:
+    double champagneTower(int poured, int query_row, int query_glass) {
+        vector&lt;vector&lt;double&gt;&gt; glasses(101, vector&lt;double&gt;(101));
+        glasses[0][0] = poured;
+        for (int r = 0; r &lt;= query_row; r&#43;&#43;) {
+            for (int c = 0; c &lt;= query_glass; c&#43;&#43;) {
+                double rest = (glasses[r][c] - 1.0) / 2.0;
+                if (rest &gt; 0) {
+                    glasses[r&#43;1][c] &#43;= rest;
+                    glasses[r&#43;1][c&#43;1] &#43;= rest;
+                }
+            }
+        }
+        return min(1.0, glasses[query_row][query_glass]);
+    }
+};
+26/2/11~26/2/14
+不知道第幾次和家人環島了，感覺很開心，因為可以住旅館、吃早餐的buffet(如果有的話)、到處吃當地小吃，以及欣賞絕美的海景。不過玩四天我們一家四口花了 10000 多，感覺好燒錢 QAQ 儘管家裡人在吃的層面都盡量省了。
+最近發現到自己已經再也沒辦法純粹地去享受那些快樂了，我滿腦子裡想的都是責任、錢途，還有令人害怕的未來。對，我其實害怕未來，因為自己真的很弱小，或許有天會變得真的孤身一人，卻沒有活下去的勇氣。所以我才更需要變得更強大，才能讓我所愛的那些人沒有後顧之憂地活著，從責任中掙脫，不管活著再痛苦也是我的選擇，不過我其實也不希望自己痛苦，那就變得麻木吧，不要期待/信任自己、他人和任何好事，只要清楚自己做的事是有意義的就行了。
+前幾天聽到很好聽、頗具深意的一首歌:  R.I.P - Language of the Lost ft. Kasane Teto SV (SynthV Original Song)，我很喜歡裡頭的歌詞，應該之後有空會想翻譯為繁體中文看看，不知道自己為什麼這麼想，明明是沒有意義的事情XD">
+<meta name="author" content="">
+<link rel="canonical" href="https://richardlaiis.github.io/posts/leetcode-799-champagne-tower/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://richardlaiis.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://richardlaiis.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://richardlaiis.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://richardlaiis.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://richardlaiis.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://richardlaiis.github.io/posts/leetcode-799-champagne-tower/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://richardlaiis.github.io/posts/leetcode-799-champagne-tower/">
+  <meta property="og:site_name" content="laiyuchi 的破紙箱">
+  <meta property="og:title" content="Leetcode 799 - Champagne Tower">
+  <meta property="og:description" content="Solution 試著模擬一次倒下所有香檳後的過程。不過這作法基本上是參考官解的，但對我來說蠻神奇的，因此選擇發上來紀錄一下。
+Code class Solution { public: double champagneTower(int poured, int query_row, int query_glass) { vector&lt;vector&lt;double&gt;&gt; glasses(101, vector&lt;double&gt;(101)); glasses[0][0] = poured; for (int r = 0; r &lt;= query_row; r&#43;&#43;) { for (int c = 0; c &lt;= query_glass; c&#43;&#43;) { double rest = (glasses[r][c] - 1.0) / 2.0; if (rest &gt; 0) { glasses[r&#43;1][c] &#43;= rest; glasses[r&#43;1][c&#43;1] &#43;= rest; } } } return min(1.0, glasses[query_row][query_glass]); } }; 26/2/11~26/2/14 不知道第幾次和家人環島了，感覺很開心，因為可以住旅館、吃早餐的buffet(如果有的話)、到處吃當地小吃，以及欣賞絕美的海景。不過玩四天我們一家四口花了 10000 多，感覺好燒錢 QAQ 儘管家裡人在吃的層面都盡量省了。
+最近發現到自己已經再也沒辦法純粹地去享受那些快樂了，我滿腦子裡想的都是責任、錢途，還有令人害怕的未來。對，我其實害怕未來，因為自己真的很弱小，或許有天會變得真的孤身一人，卻沒有活下去的勇氣。所以我才更需要變得更強大，才能讓我所愛的那些人沒有後顧之憂地活著，從責任中掙脫，不管活著再痛苦也是我的選擇，不過我其實也不希望自己痛苦，那就變得麻木吧，不要期待/信任自己、他人和任何好事，只要清楚自己做的事是有意義的就行了。
+前幾天聽到很好聽、頗具深意的一首歌: R.I.P - Language of the Lost ft. Kasane Teto SV (SynthV Original Song)，我很喜歡裡頭的歌詞，應該之後有空會想翻譯為繁體中文看看，不知道自己為什麼這麼想，明明是沒有意義的事情XD">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-02-14T16:50:10+08:00">
+    <meta property="article:modified_time" content="2026-02-14T16:50:10+08:00">
+    <meta property="article:tag" content="LeetCode">
+    <meta property="article:tag" content="Murmur">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Leetcode 799 - Champagne Tower">
+<meta name="twitter:description" content="Solution
+試著模擬一次倒下所有香檳後的過程。不過這作法基本上是參考官解的，但對我來說蠻神奇的，因此選擇發上來紀錄一下。
+Code
+class Solution {
+public:
+    double champagneTower(int poured, int query_row, int query_glass) {
+        vector&lt;vector&lt;double&gt;&gt; glasses(101, vector&lt;double&gt;(101));
+        glasses[0][0] = poured;
+        for (int r = 0; r &lt;= query_row; r&#43;&#43;) {
+            for (int c = 0; c &lt;= query_glass; c&#43;&#43;) {
+                double rest = (glasses[r][c] - 1.0) / 2.0;
+                if (rest &gt; 0) {
+                    glasses[r&#43;1][c] &#43;= rest;
+                    glasses[r&#43;1][c&#43;1] &#43;= rest;
+                }
+            }
+        }
+        return min(1.0, glasses[query_row][query_glass]);
+    }
+};
+26/2/11~26/2/14
+不知道第幾次和家人環島了，感覺很開心，因為可以住旅館、吃早餐的buffet(如果有的話)、到處吃當地小吃，以及欣賞絕美的海景。不過玩四天我們一家四口花了 10000 多，感覺好燒錢 QAQ 儘管家裡人在吃的層面都盡量省了。
+最近發現到自己已經再也沒辦法純粹地去享受那些快樂了，我滿腦子裡想的都是責任、錢途，還有令人害怕的未來。對，我其實害怕未來，因為自己真的很弱小，或許有天會變得真的孤身一人，卻沒有活下去的勇氣。所以我才更需要變得更強大，才能讓我所愛的那些人沒有後顧之憂地活著，從責任中掙脫，不管活著再痛苦也是我的選擇，不過我其實也不希望自己痛苦，那就變得麻木吧，不要期待/信任自己、他人和任何好事，只要清楚自己做的事是有意義的就行了。
+前幾天聽到很好聽、頗具深意的一首歌:  R.I.P - Language of the Lost ft. Kasane Teto SV (SynthV Original Song)，我很喜歡裡頭的歌詞，應該之後有空會想翻譯為繁體中文看看，不知道自己為什麼這麼想，明明是沒有意義的事情XD">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://richardlaiis.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Leetcode 799 - Champagne Tower",
+      "item": "https://richardlaiis.github.io/posts/leetcode-799-champagne-tower/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Leetcode 799 - Champagne Tower",
+  "name": "Leetcode 799 - Champagne Tower",
+  "description": "Solution 試著模擬一次倒下所有香檳後的過程。不過這作法基本上是參考官解的，但對我來說蠻神奇的，因此選擇發上來紀錄一下。\nCode class Solution { public: double champagneTower(int poured, int query_row, int query_glass) { vector\u0026lt;vector\u0026lt;double\u0026gt;\u0026gt; glasses(101, vector\u0026lt;double\u0026gt;(101)); glasses[0][0] = poured; for (int r = 0; r \u0026lt;= query_row; r++) { for (int c = 0; c \u0026lt;= query_glass; c++) { double rest = (glasses[r][c] - 1.0) / 2.0; if (rest \u0026gt; 0) { glasses[r+1][c] += rest; glasses[r+1][c+1] += rest; } } } return min(1.0, glasses[query_row][query_glass]); } }; 26/2/11~26/2/14 不知道第幾次和家人環島了，感覺很開心，因為可以住旅館、吃早餐的buffet(如果有的話)、到處吃當地小吃，以及欣賞絕美的海景。不過玩四天我們一家四口花了 10000 多，感覺好燒錢 QAQ 儘管家裡人在吃的層面都盡量省了。\n最近發現到自己已經再也沒辦法純粹地去享受那些快樂了，我滿腦子裡想的都是責任、錢途，還有令人害怕的未來。對，我其實害怕未來，因為自己真的很弱小，或許有天會變得真的孤身一人，卻沒有活下去的勇氣。所以我才更需要變得更強大，才能讓我所愛的那些人沒有後顧之憂地活著，從責任中掙脫，不管活著再痛苦也是我的選擇，不過我其實也不希望自己痛苦，那就變得麻木吧，不要期待/信任自己、他人和任何好事，只要清楚自己做的事是有意義的就行了。\n前幾天聽到很好聽、頗具深意的一首歌: R.I.P - Language of the Lost ft. Kasane Teto SV (SynthV Original Song)，我很喜歡裡頭的歌詞，應該之後有空會想翻譯為繁體中文看看，不知道自己為什麼這麼想，明明是沒有意義的事情XD\n",
+  "keywords": [
+    "LeetCode", "murmur"
+  ],
+  "articleBody": "Solution 試著模擬一次倒下所有香檳後的過程。不過這作法基本上是參考官解的，但對我來說蠻神奇的，因此選擇發上來紀錄一下。\nCode class Solution { public: double champagneTower(int poured, int query_row, int query_glass) { vector\u003cvector\u003cdouble\u003e\u003e glasses(101, vector\u003cdouble\u003e(101)); glasses[0][0] = poured; for (int r = 0; r \u003c= query_row; r++) { for (int c = 0; c \u003c= query_glass; c++) { double rest = (glasses[r][c] - 1.0) / 2.0; if (rest \u003e 0) { glasses[r+1][c] += rest; glasses[r+1][c+1] += rest; } } } return min(1.0, glasses[query_row][query_glass]); } }; 26/2/11~26/2/14 不知道第幾次和家人環島了，感覺很開心，因為可以住旅館、吃早餐的buffet(如果有的話)、到處吃當地小吃，以及欣賞絕美的海景。不過玩四天我們一家四口花了 10000 多，感覺好燒錢 QAQ 儘管家裡人在吃的層面都盡量省了。\n最近發現到自己已經再也沒辦法純粹地去享受那些快樂了，我滿腦子裡想的都是責任、錢途，還有令人害怕的未來。對，我其實害怕未來，因為自己真的很弱小，或許有天會變得真的孤身一人，卻沒有活下去的勇氣。所以我才更需要變得更強大，才能讓我所愛的那些人沒有後顧之憂地活著，從責任中掙脫，不管活著再痛苦也是我的選擇，不過我其實也不希望自己痛苦，那就變得麻木吧，不要期待/信任自己、他人和任何好事，只要清楚自己做的事是有意義的就行了。\n前幾天聽到很好聽、頗具深意的一首歌: R.I.P - Language of the Lost ft. Kasane Teto SV (SynthV Original Song)，我很喜歡裡頭的歌詞，應該之後有空會想翻譯為繁體中文看看，不知道自己為什麼這麼想，明明是沒有意義的事情XD\n晚安。\n",
+  "wordCount" : "90",
+  "inLanguage": "en",
+  "datePublished": "2026-02-14T16:50:10+08:00",
+  "dateModified": "2026-02-14T16:50:10+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://richardlaiis.github.io/posts/leetcode-799-champagne-tower/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "laiyuchi 的破紙箱",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://richardlaiis.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://richardlaiis.github.io/" accesskey="h" title="laiyuchi 的破紙箱 (Alt + H)">laiyuchi 的破紙箱</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://richardlaiis.github.io/categories/" title="categories">
+                    <span>categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://richardlaiis.github.io/tags/" title="tags">
+                    <span>tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://richardlaiis.github.io/about/" title="about">
+                    <span>about</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://richardlaiis.github.io/archives/" title="archives">
+                    <span>archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://richardlaiis.github.io/search/" title="search (Alt &#43; /)" accesskey=/>
+                    <span>search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Leetcode 799 - Champagne Tower
+    </h1>
+    <div class="post-meta"><span title='2026-02-14 16:50:10 +0800 CST'>February 14, 2026</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="solution">Solution<a hidden class="anchor" aria-hidden="true" href="#solution">#</a></h2>
+<p>試著模擬一次倒下所有香檳後的過程。不過這作法基本上是參考官解的，但對我來說蠻神奇的，因此選擇發上來紀錄一下。</p>
+<h2 id="code">Code<a hidden class="anchor" aria-hidden="true" href="#code">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">double</span> champagneTower(<span style="color:#66d9ef">int</span> poured, <span style="color:#66d9ef">int</span> query_row, <span style="color:#66d9ef">int</span> query_glass) {
+</span></span><span style="display:flex;"><span>        vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;&gt;</span> glasses(<span style="color:#ae81ff">101</span>, vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;</span>(<span style="color:#ae81ff">101</span>));
+</span></span><span style="display:flex;"><span>        glasses[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> poured;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> r <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; r <span style="color:#f92672">&lt;=</span> query_row; r<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> c <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; c <span style="color:#f92672">&lt;=</span> query_glass; c<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">double</span> rest <span style="color:#f92672">=</span> (glasses[r][c] <span style="color:#f92672">-</span> <span style="color:#ae81ff">1.0</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2.0</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (rest <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>                    glasses[r<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>][c] <span style="color:#f92672">+=</span> rest;
+</span></span><span style="display:flex;"><span>                    glasses[r<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>][c<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+=</span> rest;
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">min</span>(<span style="color:#ae81ff">1.0</span>, glasses[query_row][query_glass]);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h2 id="2621126214">26/2/11~26/2/14<a hidden class="anchor" aria-hidden="true" href="#2621126214">#</a></h2>
+<p>不知道第幾次和家人環島了，感覺很開心，因為可以住旅館、吃早餐的buffet(如果有的話)、到處吃當地小吃，以及欣賞絕美的海景。不過玩四天我們一家四口花了 10000 多，感覺好燒錢 QAQ 儘管家裡人在吃的層面都盡量省了。</p>
+<p>最近發現到自己已經再也沒辦法純粹地去享受那些快樂了，我滿腦子裡想的都是責任、錢途，還有令人害怕的未來。對，我其實害怕未來，因為自己真的很弱小，或許有天會變得真的孤身一人，卻沒有活下去的勇氣。所以我才更需要變得更強大，才能讓我所愛的那些人沒有後顧之憂地活著，從責任中掙脫，不管活著再痛苦也是我的選擇，不過我其實也不希望自己痛苦，那就變得麻木吧，不要期待/信任自己、他人和任何好事，只要清楚自己做的事是有意義的就行了。</p>
+<p>前幾天聽到很好聽、頗具深意的一首歌:  <a href="https://youtu.be/1xEfMnXyGkA?si=W0IeL_6lG1LOcUnG">R.I.P - Language of the Lost ft. Kasane Teto SV (SynthV Original Song)</a>，我很喜歡裡頭的歌詞，應該之後有空會想翻譯為繁體中文看看，不知道自己為什麼這麼想，明明是沒有意義的事情XD</p>
+<p>晚安。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://richardlaiis.github.io/tags/leetcode/">LeetCode</a></li>
+      <li><a href="https://richardlaiis.github.io/tags/murmur/">Murmur</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://richardlaiis.github.io/">laiyuchi 的破紙箱</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
