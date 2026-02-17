@@ -6,8 +6,36 @@
     <description>Recent content on laiyuchi 的破紙箱</description>
     <generator>Hugo -- 0.154.5</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 Feb 2026 09:29:08 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 17 Feb 2026 11:42:06 +0800</lastBuildDate>
     <atom:link href="https://richardlaiis.csie.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 401 - Binary Watch</title>
+      <link>https://richardlaiis.csie.org/posts/leetcode-401-binary-watch/</link>
+      <pubDate>Tue, 17 Feb 2026 11:42:06 +0800</pubDate>
+      <guid>https://richardlaiis.csie.org/posts/leetcode-401-binary-watch/</guid>
+      <description>&lt;h2 id=&#34;approach-1---classic-enumeration&#34;&gt;Approach 1 - Classic Enumeration&lt;/h2&gt;
+&lt;p&gt;把所有小時、分鐘的組合列出來，然後看他們的 set bit 的數量加起來是不是 &lt;code&gt;turnedOn&lt;/code&gt;。這是我一開始想到的作法，此外似乎 C++ 20 就開始有 &lt;code&gt;std::format()&lt;/code&gt; 可以用了，還蠻酷的:) 我第一次使用&lt;/p&gt;
+&lt;h3 id=&#34;ac-code&#34;&gt;AC Code&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Solution&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    vector&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;string&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; readBinaryWatch(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; turnedOn) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        vector&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;string&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; ans;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; h &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; h &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;; h&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; m &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; m &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;60&lt;/span&gt;; m&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; t1 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; __builtin_popcount(h);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; t2 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; __builtin_popcount(m);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (t1&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;t2 &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; turnedOn) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    string time &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;format(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;{}:{:02}&amp;#34;&lt;/span&gt;, h, m);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    ans.push_back(time);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; ans;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;approach-2---binary-enumeration&#34;&gt;Approach 2 - Binary Enumeration&lt;/h2&gt;
+&lt;p&gt;這是官解提供的作法之一，因為小時跟分鐘加起來有 10 個 bits，所以有 &lt;code&gt;2^10=1024&lt;/code&gt; 種可能性，我們可以透過枚舉 &lt;code&gt;0~1024&lt;/code&gt; 的 i，i 從 MSB 開始數四位是小時，剩下六位是分鐘，透過基本的位元運算以及 Approach 1 的一些觀念就可以做出來了。anyway 這題非常簡單，依然是不用動腦的 Easy 類別。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Leetcode 67 - Add Binary</title>
       <link>https://richardlaiis.csie.org/posts/leetcode-67-add-binary/</link>

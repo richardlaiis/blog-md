@@ -162,6 +162,20 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Leetcode 401 - Binary Watch
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Approach 1 - Classic Enumeration 把所有小時、分鐘的組合列出來，然後看他們的 set bit 的數量加起來是不是 turnedOn。這是我一開始想到的作法，此外似乎 C&#43;&#43; 20 就開始有 std::format() 可以用了，還蠻酷的:) 我第一次使用
+AC Code class Solution { public: vector&lt;string&gt; readBinaryWatch(int turnedOn) { vector&lt;string&gt; ans; for (int h = 0; h &lt; 12; h&#43;&#43;) { for (int m = 0; m &lt; 60; m&#43;&#43;) { int t1 = __builtin_popcount(h); int t2 = __builtin_popcount(m); if (t1&#43;t2 == turnedOn) { string time = std::format(&#34;{}:{:02}&#34;, h, m); ans.push_back(time); } } } return ans; } }; Approach 2 - Binary Enumeration 這是官解提供的作法之一，因為小時跟分鐘加起來有 10 個 bits，所以有 2^10=1024 種可能性，我們可以透過枚舉 0~1024 的 i，i 從 MSB 開始數四位是小時，剩下六位是分鐘，透過基本的位元運算以及 Approach 1 的一些觀念就可以做出來了。anyway 這題非常簡單，依然是不用動腦的 Easy 類別。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-02-17 11:42:06 +0800 CST'>February 17, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to Leetcode 401 - Binary Watch" href="https://richardlaiis.csie.org/posts/leetcode-401-binary-watch/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Leetcode 67 - Add Binary
     </h2>
   </header>
@@ -285,21 +299,6 @@ Code class Solution { public: int minDifference(vector&lt;int&gt;&amp; nums) { s
   </div>
   <footer class="entry-footer"><span title='2026-02-02 08:52:21 +0800 CST'>February 2, 2026</span></footer>
   <a class="entry-link" aria-label="post link to Leetcode 1509 - Minimum Difference Between Largest and Smallest Value in Three Moves" href="https://richardlaiis.csie.org/posts/leetcode-minimum-difference-between-largest-and-smallest-value-in-three-moves/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Leetcode 3010 - Divide an Array Into Subarrays With Minimum Cost I
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Approach To minimize the total cost, we need to partition the array using the three smallest elements. However, since the first element is always included, the final answer is simply the first element plus the two smallest elements from the rest of the array.
-In my code, I sort the array (excluding the first element) using built-in sort() function, but there might be other methods with better time complexity.
-Code class Solution { public: int minimumCost(vector&lt;int&gt;&amp; nums) { sort(nums.begin() &#43; 1, nums.end()); return nums[0] &#43; nums[1] &#43; nums[2]; } }; uwu 我把 richardlaiis.csie.org (新的網址) 綁到 richardlaiis.github.io (原網址) 了，比我想像中的簡單很多～ 好希望趕快開學;)
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-02-01 08:50:58 +0800 CST'>February 1, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to Leetcode 3010 - Divide an Array Into Subarrays With Minimum Cost I" href="https://richardlaiis.csie.org/posts/leetcode-divide-an-array-into-subarrays-with-minimum-cost-i/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

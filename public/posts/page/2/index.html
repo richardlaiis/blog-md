@@ -162,6 +162,21 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Leetcode 3010 - Divide an Array Into Subarrays With Minimum Cost I
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Approach To minimize the total cost, we need to partition the array using the three smallest elements. However, since the first element is always included, the final answer is simply the first element plus the two smallest elements from the rest of the array.
+In my code, I sort the array (excluding the first element) using built-in sort() function, but there might be other methods with better time complexity.
+Code class Solution { public: int minimumCost(vector&lt;int&gt;&amp; nums) { sort(nums.begin() &#43; 1, nums.end()); return nums[0] &#43; nums[1] &#43; nums[2]; } }; uwu 我把 richardlaiis.csie.org (新的網址) 綁到 richardlaiis.github.io (原網址) 了，比我想像中的簡單很多～ 好希望趕快開學;)
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-02-01 08:50:58 +0800 CST'>February 1, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to Leetcode 3010 - Divide an Array Into Subarrays With Minimum Cost I" href="https://richardlaiis.csie.org/posts/leetcode-divide-an-array-into-subarrays-with-minimum-cost-i/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Leetcode 744 - Find Smallest Letter Greater Than Target
     </h2>
   </header>

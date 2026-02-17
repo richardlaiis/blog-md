@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Leetcode 401 - Binary Watch | laiyuchi 的破紙箱</title>
+<meta name="keywords" content="">
+<meta name="description" content="Approach 1 - Classic Enumeration
+把所有小時、分鐘的組合列出來，然後看他們的 set bit 的數量加起來是不是 turnedOn。這是我一開始想到的作法，此外似乎 C&#43;&#43; 20 就開始有 std::format() 可以用了，還蠻酷的:) 我第一次使用
+AC Code
+class Solution {
+public:
+    vector&lt;string&gt; readBinaryWatch(int turnedOn) {
+        vector&lt;string&gt; ans;
+        for (int h = 0; h &lt; 12; h&#43;&#43;) {
+            for (int m = 0; m &lt; 60; m&#43;&#43;) {
+                int t1 = __builtin_popcount(h);
+                int t2 = __builtin_popcount(m);
+                if (t1&#43;t2 == turnedOn) {
+                    string time = std::format(&#34;{}:{:02}&#34;, h, m);
+                    ans.push_back(time);
+                }
+            }
+        }
+        return ans;
+    }
+};
+Approach 2 - Binary Enumeration
+這是官解提供的作法之一，因為小時跟分鐘加起來有 10 個 bits，所以有 2^10=1024 種可能性，我們可以透過枚舉 0~1024 的 i，i 從 MSB 開始數四位是小時，剩下六位是分鐘，透過基本的位元運算以及 Approach 1 的一些觀念就可以做出來了。anyway 這題非常簡單，依然是不用動腦的 Easy 類別。">
+<meta name="author" content="">
+<link rel="canonical" href="https://richardlaiis.csie.org/posts/leetcode-401-binary-watch/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://richardlaiis.csie.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://richardlaiis.csie.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://richardlaiis.csie.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://richardlaiis.csie.org/apple-touch-icon.png">
+<link rel="mask-icon" href="https://richardlaiis.csie.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://richardlaiis.csie.org/posts/leetcode-401-binary-watch/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://richardlaiis.csie.org/posts/leetcode-401-binary-watch/">
+  <meta property="og:site_name" content="laiyuchi 的破紙箱">
+  <meta property="og:title" content="Leetcode 401 - Binary Watch">
+  <meta property="og:description" content="Approach 1 - Classic Enumeration 把所有小時、分鐘的組合列出來，然後看他們的 set bit 的數量加起來是不是 turnedOn。這是我一開始想到的作法，此外似乎 C&#43;&#43; 20 就開始有 std::format() 可以用了，還蠻酷的:) 我第一次使用
+AC Code class Solution { public: vector&lt;string&gt; readBinaryWatch(int turnedOn) { vector&lt;string&gt; ans; for (int h = 0; h &lt; 12; h&#43;&#43;) { for (int m = 0; m &lt; 60; m&#43;&#43;) { int t1 = __builtin_popcount(h); int t2 = __builtin_popcount(m); if (t1&#43;t2 == turnedOn) { string time = std::format(&#34;{}:{:02}&#34;, h, m); ans.push_back(time); } } } return ans; } }; Approach 2 - Binary Enumeration 這是官解提供的作法之一，因為小時跟分鐘加起來有 10 個 bits，所以有 2^10=1024 種可能性，我們可以透過枚舉 0~1024 的 i，i 從 MSB 開始數四位是小時，剩下六位是分鐘，透過基本的位元運算以及 Approach 1 的一些觀念就可以做出來了。anyway 這題非常簡單，依然是不用動腦的 Easy 類別。">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-02-17T11:42:06+08:00">
+    <meta property="article:modified_time" content="2026-02-17T11:42:06+08:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Leetcode 401 - Binary Watch">
+<meta name="twitter:description" content="Approach 1 - Classic Enumeration
+把所有小時、分鐘的組合列出來，然後看他們的 set bit 的數量加起來是不是 turnedOn。這是我一開始想到的作法，此外似乎 C&#43;&#43; 20 就開始有 std::format() 可以用了，還蠻酷的:) 我第一次使用
+AC Code
+class Solution {
+public:
+    vector&lt;string&gt; readBinaryWatch(int turnedOn) {
+        vector&lt;string&gt; ans;
+        for (int h = 0; h &lt; 12; h&#43;&#43;) {
+            for (int m = 0; m &lt; 60; m&#43;&#43;) {
+                int t1 = __builtin_popcount(h);
+                int t2 = __builtin_popcount(m);
+                if (t1&#43;t2 == turnedOn) {
+                    string time = std::format(&#34;{}:{:02}&#34;, h, m);
+                    ans.push_back(time);
+                }
+            }
+        }
+        return ans;
+    }
+};
+Approach 2 - Binary Enumeration
+這是官解提供的作法之一，因為小時跟分鐘加起來有 10 個 bits，所以有 2^10=1024 種可能性，我們可以透過枚舉 0~1024 的 i，i 從 MSB 開始數四位是小時，剩下六位是分鐘，透過基本的位元運算以及 Approach 1 的一些觀念就可以做出來了。anyway 這題非常簡單，依然是不用動腦的 Easy 類別。">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://richardlaiis.csie.org/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Leetcode 401 - Binary Watch",
+      "item": "https://richardlaiis.csie.org/posts/leetcode-401-binary-watch/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Leetcode 401 - Binary Watch",
+  "name": "Leetcode 401 - Binary Watch",
+  "description": "Approach 1 - Classic Enumeration 把所有小時、分鐘的組合列出來，然後看他們的 set bit 的數量加起來是不是 turnedOn。這是我一開始想到的作法，此外似乎 C++ 20 就開始有 std::format() 可以用了，還蠻酷的:) 我第一次使用\nAC Code class Solution { public: vector\u0026lt;string\u0026gt; readBinaryWatch(int turnedOn) { vector\u0026lt;string\u0026gt; ans; for (int h = 0; h \u0026lt; 12; h++) { for (int m = 0; m \u0026lt; 60; m++) { int t1 = __builtin_popcount(h); int t2 = __builtin_popcount(m); if (t1+t2 == turnedOn) { string time = std::format(\u0026#34;{}:{:02}\u0026#34;, h, m); ans.push_back(time); } } } return ans; } }; Approach 2 - Binary Enumeration 這是官解提供的作法之一，因為小時跟分鐘加起來有 10 個 bits，所以有 2^10=1024 種可能性，我們可以透過枚舉 0~1024 的 i，i 從 MSB 開始數四位是小時，剩下六位是分鐘，透過基本的位元運算以及 Approach 1 的一些觀念就可以做出來了。anyway 這題非常簡單，依然是不用動腦的 Easy 類別。\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "Approach 1 - Classic Enumeration 把所有小時、分鐘的組合列出來，然後看他們的 set bit 的數量加起來是不是 turnedOn。這是我一開始想到的作法，此外似乎 C++ 20 就開始有 std::format() 可以用了，還蠻酷的:) 我第一次使用\nAC Code class Solution { public: vector\u003cstring\u003e readBinaryWatch(int turnedOn) { vector\u003cstring\u003e ans; for (int h = 0; h \u003c 12; h++) { for (int m = 0; m \u003c 60; m++) { int t1 = __builtin_popcount(h); int t2 = __builtin_popcount(m); if (t1+t2 == turnedOn) { string time = std::format(\"{}:{:02}\", h, m); ans.push_back(time); } } } return ans; } }; Approach 2 - Binary Enumeration 這是官解提供的作法之一，因為小時跟分鐘加起來有 10 個 bits，所以有 2^10=1024 種可能性，我們可以透過枚舉 0~1024 的 i，i 從 MSB 開始數四位是小時，剩下六位是分鐘，透過基本的位元運算以及 Approach 1 的一些觀念就可以做出來了。anyway 這題非常簡單，依然是不用動腦的 Easy 類別。\n然後這個作法比 Approach 快了一點，but idk why.\nAC Code class Solution { public: vector\u003cstring\u003e readBinaryWatch(int turnedOn) { vector\u003cstring\u003e ans; for (int i = 0; i \u003c 1024; i++) { int h = i\u003e\u003e6, m = i\u002663; if (h \u003c 12 \u0026\u0026 m \u003c 60 \u0026\u0026 __builtin_popcount(h)+__builtin_popcount(m)==turnedOn) { ans.emplace_back(std::format(\"{}:{:02}\", h, m)); } } return ans; } }; Untitled 今天是大年初一，祝各位新年順利！\n",
+  "wordCount" : "154",
+  "inLanguage": "en",
+  "datePublished": "2026-02-17T11:42:06+08:00",
+  "dateModified": "2026-02-17T11:42:06+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://richardlaiis.csie.org/posts/leetcode-401-binary-watch/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "laiyuchi 的破紙箱",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://richardlaiis.csie.org/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://richardlaiis.csie.org/" accesskey="h" title="laiyuchi 的破紙箱 (Alt + H)">laiyuchi 的破紙箱</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://richardlaiis.csie.org/categories/" title="categories">
+                    <span>categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://richardlaiis.csie.org/tags/" title="tags">
+                    <span>tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://richardlaiis.csie.org/about/" title="about">
+                    <span>about</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://richardlaiis.csie.org/archives/" title="archives">
+                    <span>archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://richardlaiis.csie.org/search/" title="search (Alt &#43; /)" accesskey=/>
+                    <span>search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Leetcode 401 - Binary Watch
+    </h1>
+    <div class="post-meta"><span title='2026-02-17 11:42:06 +0800 CST'>February 17, 2026</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="approach-1---classic-enumeration">Approach 1 - Classic Enumeration<a hidden class="anchor" aria-hidden="true" href="#approach-1---classic-enumeration">#</a></h2>
+<p>把所有小時、分鐘的組合列出來，然後看他們的 set bit 的數量加起來是不是 <code>turnedOn</code>。這是我一開始想到的作法，此外似乎 C++ 20 就開始有 <code>std::format()</code> 可以用了，還蠻酷的:) 我第一次使用</p>
+<h3 id="ac-code">AC Code<a hidden class="anchor" aria-hidden="true" href="#ac-code">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> readBinaryWatch(<span style="color:#66d9ef">int</span> turnedOn) {
+</span></span><span style="display:flex;"><span>        vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> ans;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> h <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; h <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">12</span>; h<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> m <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; m <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">60</span>; m<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">int</span> t1 <span style="color:#f92672">=</span> __builtin_popcount(h);
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">int</span> t2 <span style="color:#f92672">=</span> __builtin_popcount(m);
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (t1<span style="color:#f92672">+</span>t2 <span style="color:#f92672">==</span> turnedOn) {
+</span></span><span style="display:flex;"><span>                    string time <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>format(<span style="color:#e6db74">&#34;{}:{:02}&#34;</span>, h, m);
+</span></span><span style="display:flex;"><span>                    ans.push_back(time);
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> ans;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h2 id="approach-2---binary-enumeration">Approach 2 - Binary Enumeration<a hidden class="anchor" aria-hidden="true" href="#approach-2---binary-enumeration">#</a></h2>
+<p>這是官解提供的作法之一，因為小時跟分鐘加起來有 10 個 bits，所以有 <code>2^10=1024</code> 種可能性，我們可以透過枚舉 <code>0~1024</code> 的 i，i 從 MSB 開始數四位是小時，剩下六位是分鐘，透過基本的位元運算以及 Approach 1 的一些觀念就可以做出來了。anyway 這題非常簡單，依然是不用動腦的 Easy 類別。</p>
+<p>然後這個作法比 Approach 快了一點，but idk why.</p>
+<h3 id="ac-code-1">AC Code<a hidden class="anchor" aria-hidden="true" href="#ac-code-1">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> readBinaryWatch(<span style="color:#66d9ef">int</span> turnedOn) {
+</span></span><span style="display:flex;"><span>        vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> ans;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1024</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> h <span style="color:#f92672">=</span> i<span style="color:#f92672">&gt;&gt;</span><span style="color:#ae81ff">6</span>, m <span style="color:#f92672">=</span> i<span style="color:#f92672">&amp;</span><span style="color:#ae81ff">63</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (h <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">12</span> <span style="color:#f92672">&amp;&amp;</span> m <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">60</span> <span style="color:#f92672">&amp;&amp;</span> __builtin_popcount(h)<span style="color:#f92672">+</span>__builtin_popcount(m)<span style="color:#f92672">==</span>turnedOn) {
+</span></span><span style="display:flex;"><span>                ans.emplace_back(std<span style="color:#f92672">::</span>format(<span style="color:#e6db74">&#34;{}:{:02}&#34;</span>, h, m));
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> ans;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h2 id="untitled">Untitled<a hidden class="anchor" aria-hidden="true" href="#untitled">#</a></h2>
+<p>今天是大年初一，祝各位新年順利！</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://richardlaiis.csie.org/">laiyuchi 的破紙箱</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
