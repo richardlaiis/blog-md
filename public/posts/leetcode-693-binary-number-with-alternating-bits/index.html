@@ -5,11 +5,27 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Posts | laiyuchi 的破紙箱</title>
-<meta name="keywords" content="">
-<meta name="description" content="Posts - laiyuchi 的破紙箱">
+<title>LeetCode 693 - Binary Number With Alternating Bits | laiyuchi 的破紙箱</title>
+<meta name="keywords" content="LeetCode">
+<meta name="description" content="class Solution {
+public:
+    bool hasAlternatingBits(int n) {
+
+        int cur = n &amp; 1;
+
+        for (int i = 1; i &lt; 31; i&#43;&#43;) {
+            if ( (n &gt;&gt; i) == 0 ) break;
+            int nxt = (n &gt;&gt; i) &amp; 1;
+            if (nxt == cur) return false;
+            else cur = nxt;
+        }
+
+        return true;
+    }
+};
+">
 <meta name="author" content="">
-<link rel="canonical" href="https://richardlaiis.csie.org/posts/">
+<link rel="canonical" href="https://richardlaiis.csie.org/posts/leetcode-693-binary-number-with-alternating-bits/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://richardlaiis.csie.org/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://richardlaiis.csie.org/favicon-16x16.png">
@@ -18,8 +34,7 @@
 <link rel="mask-icon" href="https://richardlaiis.csie.org/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://richardlaiis.csie.org/posts/index.xml" title="rss">
-<link rel="alternate" hreflang="en" href="https://richardlaiis.csie.org/posts/">
+<link rel="alternate" hreflang="en" href="https://richardlaiis.csie.org/posts/leetcode-693-binary-number-with-alternating-bits/">
 <noscript>
     <style>
         #theme-toggle,
@@ -71,14 +86,35 @@
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script><meta property="og:url" content="https://richardlaiis.csie.org/posts/">
+</script><meta property="og:url" content="https://richardlaiis.csie.org/posts/leetcode-693-binary-number-with-alternating-bits/">
   <meta property="og:site_name" content="laiyuchi 的破紙箱">
-  <meta property="og:title" content="Posts">
+  <meta property="og:title" content="LeetCode 693 - Binary Number With Alternating Bits">
+  <meta property="og:description" content="class Solution { public: bool hasAlternatingBits(int n) { int cur = n &amp; 1; for (int i = 1; i &lt; 31; i&#43;&#43;) { if ( (n &gt;&gt; i) == 0 ) break; int nxt = (n &gt;&gt; i) &amp; 1; if (nxt == cur) return false; else cur = nxt; } return true; } }; ">
   <meta property="og:locale" content="en-us">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-02-18T14:28:07+08:00">
+    <meta property="article:modified_time" content="2026-02-18T14:28:07+08:00">
+    <meta property="article:tag" content="LeetCode">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Posts">
-<meta name="twitter:description" content="">
+<meta name="twitter:title" content="LeetCode 693 - Binary Number With Alternating Bits">
+<meta name="twitter:description" content="class Solution {
+public:
+    bool hasAlternatingBits(int n) {
+
+        int cur = n &amp; 1;
+
+        for (int i = 1; i &lt; 31; i&#43;&#43;) {
+            if ( (n &gt;&gt; i) == 0 ) break;
+            int nxt = (n &gt;&gt; i) &amp; 1;
+            if (nxt == cur) return false;
+            else cur = nxt;
+        }
+
+        return true;
+    }
+};
+">
 
 
 <script type="application/ld+json">
@@ -91,12 +127,47 @@
       "position":  1 ,
       "name": "Posts",
       "item": "https://richardlaiis.csie.org/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "LeetCode 693 - Binary Number With Alternating Bits",
+      "item": "https://richardlaiis.csie.org/posts/leetcode-693-binary-number-with-alternating-bits/"
     }
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "LeetCode 693 - Binary Number With Alternating Bits",
+  "name": "LeetCode 693 - Binary Number With Alternating Bits",
+  "description": "class Solution { public: bool hasAlternatingBits(int n) { int cur = n \u0026amp; 1; for (int i = 1; i \u0026lt; 31; i++) { if ( (n \u0026gt;\u0026gt; i) == 0 ) break; int nxt = (n \u0026gt;\u0026gt; i) \u0026amp; 1; if (nxt == cur) return false; else cur = nxt; } return true; } }; ",
+  "keywords": [
+    "LeetCode"
+  ],
+  "articleBody": "class Solution { public: bool hasAlternatingBits(int n) { int cur = n \u0026 1; for (int i = 1; i \u003c 31; i++) { if ( (n \u003e\u003e i) == 0 ) break; int nxt = (n \u003e\u003e i) \u0026 1; if (nxt == cur) return false; else cur = nxt; } return true; } }; ",
+  "wordCount" : "56",
+  "inLanguage": "en",
+  "datePublished": "2026-02-18T14:28:07+08:00",
+  "dateModified": "2026-02-18T14:28:07+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://richardlaiis.csie.org/posts/leetcode-693-binary-number-with-alternating-bits/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "laiyuchi 的破紙箱",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://richardlaiis.csie.org/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
-<body class="list" id="top">
+<body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
@@ -153,79 +224,44 @@
         </ul>
     </nav>
 </header>
-<main class="main"> 
-<header class="page-header">
-  <h1>
-    Posts
-  </h1>
-</header>
+<main class="main">
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Leetcode 1509 - Minimum Difference Between Largest and Smallest Value in Three Moves
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Approach 有 4 種方式去移除三個元素，在將陣列由小至大排序後：
-移除前三個元素 移除前兩個元素，以及尾端一個元素 移除第一個元素，以及尾端兩個元素 移除最後面三個元素 而這四種 case 最大最小值的 difference 很容易就可以推出來了，如程式碼所示。
-Code class Solution { public: int minDifference(vector&lt;int&gt;&amp; nums) { sort(nums.begin(), nums.end()); int n = nums.size(); if (n &lt;= 4) return 0; int res = 2e9; for (int l = 0, r = n-4; l &lt; 4; l&#43;&#43;, r&#43;&#43;) { res = min(res, nums[r]-nums[l]); } return res; } }; untitled 常常，我們誰不都是老犯同一個毛病，以一種自以為是並且蠻橫的方式去愛眼前的人，卻不知道眼前的人所渴望的，有時候不過是一個善意的牽引，一場低調的擺渡和一份體貼的成全，就好像我們根本不知道，張國榮在決定放棄對紅塵聲色的眷戀從酒店墜下之前，是如何地將自己關押在情緒的寒流裡哆嗦，在風光背後，摸索著比黑暗更黑暗的黑暗，卻永遠等不到詭異的天色，也許很快就會破曉。── 范俊奇《鏤空與浮雕》(星之全蝕)
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-02-02 08:52:21 +0800 CST'>February 2, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to Leetcode 1509 - Minimum Difference Between Largest and Smallest Value in Three Moves" href="https://richardlaiis.csie.org/posts/leetcode-minimum-difference-between-largest-and-smallest-value-in-three-moves/"></a>
-</article>
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      LeetCode 693 - Binary Number With Alternating Bits
+    </h1>
+    <div class="post-meta"><span title='2026-02-18 14:28:07 +0800 CST'>February 18, 2026</span>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Leetcode 3010 - Divide an Array Into Subarrays With Minimum Cost I
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Approach To minimize the total cost, we need to partition the array using the three smallest elements. However, since the first element is always included, the final answer is simply the first element plus the two smallest elements from the rest of the array.
-In my code, I sort the array (excluding the first element) using built-in sort() function, but there might be other methods with better time complexity.
-Code class Solution { public: int minimumCost(vector&lt;int&gt;&amp; nums) { sort(nums.begin() &#43; 1, nums.end()); return nums[0] &#43; nums[1] &#43; nums[2]; } }; uwu 我把 richardlaiis.csie.org (新的網址) 綁到 richardlaiis.github.io (原網址) 了，比我想像中的簡單很多～ 好希望趕快開學;)
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-02-01 08:50:58 +0800 CST'>February 1, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to Leetcode 3010 - Divide an Array Into Subarrays With Minimum Cost I" href="https://richardlaiis.csie.org/posts/leetcode-divide-an-array-into-subarrays-with-minimum-cost-i/"></a>
-</article>
+</div>
+  </header> 
+  <div class="post-content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">bool</span> hasAlternatingBits(<span style="color:#66d9ef">int</span> n) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> cur <span style="color:#f92672">=</span> n <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">31</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> ( (n <span style="color:#f92672">&gt;&gt;</span> i) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> ) <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> nxt <span style="color:#f92672">=</span> (n <span style="color:#f92672">&gt;&gt;</span> i) <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (nxt <span style="color:#f92672">==</span> cur) <span style="color:#66d9ef">return</span> false;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span> cur <span style="color:#f92672">=</span> nxt;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> true;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Leetcode 744 - Find Smallest Letter Greater Than Target
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Approach Binary search on the location of first letter greater than target. (Using built-in upperbound function in C&#43;&#43; is good as well)
-Solution class Solution { public: char nextGreatestLetter(vector&lt;char&gt;&amp; letters, char target) { int lo = 0, hi = letters.size() - 1; char res = letters[0]; while (lo &lt;= hi) { int mid = (lo &#43; hi) / 2; if (letters[mid]-target &gt; 0) res = letters[mid], hi = mid-1; else lo = mid&#43;1; } return res; } }; 心得 之後打算把 LeetCode 每日問題的解法丟上來，希望有朝一日能進 Google X)
-話說要怎麼幫 github page 設定 custom domain，我想好好利用系上提供的免費的 csie.org QQ 但不知道為什麼弄不好，打 A Record 會是爛的，希望改成 CNAME 後 DNS checking 能成功XD
-</p>
   </div>
-  <footer class="entry-footer"><span title='2026-01-31 09:38:05 +0800 CST'>January 31, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to Leetcode 744 - Find Smallest Letter Greater Than Target" href="https://richardlaiis.csie.org/posts/leetcode-find-smallest-letter-greater-than-target/"></a>
-</article>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Myfirstpost
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>hahahahahahaha ehehehehehe
-破房 我是一個 GPA 3.4 的可悲台大資工大二生，阿哈哈哈哈哈哈。
-教授這裡風好大
-code #include &lt;stdio.h&gt; int main() { printf(&#34;Hello, world!\n&#34;); } </p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-30 16:42:54 +0800 CST'>January 30, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to Myfirstpost" href="https://richardlaiis.csie.org/posts/myfirstpost/"></a>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://richardlaiis.csie.org/tags/leetcode/">LeetCode</a></li>
+    </ul>
+  </footer>
 </article>
-<footer class="page-footer">
-  <nav class="pagination">
-    <a class="prev" href="https://richardlaiis.csie.org/posts/">
-      «&nbsp;Prev&nbsp;
-    </a>
-  </nav>
-</footer>
     </main>
     
 <footer class="footer">
@@ -302,6 +338,53 @@ code #include &lt;stdio.h&gt; int main() { printf(&#34;Hello, world!\n&#34;); } 
         }
     })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 

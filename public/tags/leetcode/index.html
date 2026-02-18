@@ -147,6 +147,18 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">LeetCode 693 - Binary Number With Alternating Bits
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>class Solution { public: bool hasAlternatingBits(int n) { int cur = n &amp; 1; for (int i = 1; i &lt; 31; i&#43;&#43;) { if ( (n &gt;&gt; i) == 0 ) break; int nxt = (n &gt;&gt; i) &amp; 1; if (nxt == cur) return false; else cur = nxt; } return true; } }; </p>
+  </div>
+  <footer class="entry-footer"><span title='2026-02-18 14:28:07 +0800 CST'>February 18, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to LeetCode 693 - Binary Number With Alternating Bits" href="https://richardlaiis.csie.org/posts/leetcode-693-binary-number-with-alternating-bits/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Leetcode 67 - Add Binary
     </h2>
   </header>
