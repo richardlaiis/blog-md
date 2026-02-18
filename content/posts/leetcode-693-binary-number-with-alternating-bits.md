@@ -7,6 +7,7 @@ tags:
 categories:
 - LeetCode
 ---
+## Approach 1 (brute force)
 ```cpp
 class Solution {
 public:
@@ -22,6 +23,32 @@ public:
         }
 
         return true;
+    }
+};
+```
+
+---
+
+## Approach 2 (XOR trick)
+```cpp
+class Solution {
+public:
+    bool hasAlternatingBits(int n) {
+        long long x = n ^ (n>>1);
+        return ((x & (x+1)) == 0);
+    }
+};
+```
+
+---
+
+## Approach 3 (XOR trick too:))
+```cpp
+class Solution {
+public:
+    bool hasAlternatingBits(int n) {
+        unsigned int x = n ^ (n >> 2);
+        return ((x & (x-1)) == 0);
     }
 };
 ```

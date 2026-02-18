@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>LeetCode 3637 - Trionic Array I | laiyuchi 的破紙箱</title>
 <meta name="keywords" content="LeetCode, murmur">
 <meta name="description" content="Approach
@@ -34,16 +34,16 @@ murmur
 很希望趕快開學，就可以再次躋身忙碌之中，麻木比痛苦好太多了。
 ">
 <meta name="author" content="">
-<link rel="canonical" href="https://richardlaiis.csie.org/posts/leetcode-3637-trionic-array-i/">
+<link rel="canonical" href="http://localhost:1313/posts/leetcode-3637-trionic-array-i/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://richardlaiis.csie.org/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://richardlaiis.csie.org/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://richardlaiis.csie.org/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://richardlaiis.csie.org/apple-touch-icon.png">
-<link rel="mask-icon" href="https://richardlaiis.csie.org/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://richardlaiis.csie.org/posts/leetcode-3637-trionic-array-i/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/leetcode-3637-trionic-array-i/">
 <noscript>
     <style>
         #theme-toggle,
@@ -95,104 +95,13 @@ murmur
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script><meta property="og:url" content="https://richardlaiis.csie.org/posts/leetcode-3637-trionic-array-i/">
-  <meta property="og:site_name" content="laiyuchi 的破紙箱">
-  <meta property="og:title" content="LeetCode 3637 - Trionic Array I">
-  <meta property="og:description" content="Approach 就是暴力題，所以才會被歸類在 Easy。只要紀錄每個區間的存在性以及當前的索引，並且細心判斷各種情況就行了，沒有使用到任何演算法知識。
-Code class Solution { public: bool isTrionic(vector&lt;int&gt;&amp; nums) { int cur = 1, n = nums.size(); bool has = 0; while (cur &lt; n &amp;&amp; nums[cur] &gt; nums[cur-1]) cur&#43;&#43;, has = 1; if (!has || cur == n) return 0; has = 0; while (cur &lt; n &amp;&amp; nums[cur] &lt; nums[cur-1]) cur&#43;&#43;, has = 1; if (!has || cur == n) return 0; has = 0; while (cur &lt; n &amp;&amp; nums[cur] &gt; nums[cur-1]) cur&#43;&#43;, has = 1; if (!has || cur != n) return 0; return 1; } }; murmur 最近每天都好無聊，感覺自己正在變成一個更加無趣、更廢的一個存在，但或許這樣就不會再讓任何人失望了吧，我只要繼續埋頭努力就行了，不要再像以前一樣耽溺享樂，過度在意自己的感受;)
-很希望趕快開學，就可以再次躋身忙碌之中，麻木比痛苦好太多了。">
-  <meta property="og:locale" content="en-us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2026-02-03T09:06:58+08:00">
-    <meta property="article:modified_time" content="2026-02-03T09:06:58+08:00">
-    <meta property="article:tag" content="LeetCode">
-    <meta property="article:tag" content="Murmur">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode 3637 - Trionic Array I">
-<meta name="twitter:description" content="Approach
-就是暴力題，所以才會被歸類在 Easy。只要紀錄每個區間的存在性以及當前的索引，並且細心判斷各種情況就行了，沒有使用到任何演算法知識。
-Code
-class Solution {
-public:
-    bool isTrionic(vector&lt;int&gt;&amp; nums) {
-        int cur = 1, n = nums.size();
-
-        bool has = 0;
-        while (cur &lt; n &amp;&amp; nums[cur] &gt; nums[cur-1]) cur&#43;&#43;, has = 1;
-        if (!has || cur == n) return 0;
-        
-        has = 0;
-        while (cur &lt; n &amp;&amp; nums[cur] &lt; nums[cur-1]) cur&#43;&#43;, has = 1;
-        if (!has || cur == n) return 0;
-        
-        has = 0;
-        while (cur &lt; n &amp;&amp; nums[cur] &gt; nums[cur-1]) cur&#43;&#43;, has = 1;
-        if (!has || cur != n) return 0;
-        return 1;
-    }
-};
-murmur
-最近每天都好無聊，感覺自己正在變成一個更加無趣、更廢的一個存在，但或許這樣就不會再讓任何人失望了吧，我只要繼續埋頭努力就行了，不要再像以前一樣耽溺享樂，過度在意自己的感受;)
-很希望趕快開學，就可以再次躋身忙碌之中，麻木比痛苦好太多了。
-">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://richardlaiis.csie.org/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "LeetCode 3637 - Trionic Array I",
-      "item": "https://richardlaiis.csie.org/posts/leetcode-3637-trionic-array-i/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "LeetCode 3637 - Trionic Array I",
-  "name": "LeetCode 3637 - Trionic Array I",
-  "description": "Approach 就是暴力題，所以才會被歸類在 Easy。只要紀錄每個區間的存在性以及當前的索引，並且細心判斷各種情況就行了，沒有使用到任何演算法知識。\nCode class Solution { public: bool isTrionic(vector\u0026lt;int\u0026gt;\u0026amp; nums) { int cur = 1, n = nums.size(); bool has = 0; while (cur \u0026lt; n \u0026amp;\u0026amp; nums[cur] \u0026gt; nums[cur-1]) cur++, has = 1; if (!has || cur == n) return 0; has = 0; while (cur \u0026lt; n \u0026amp;\u0026amp; nums[cur] \u0026lt; nums[cur-1]) cur++, has = 1; if (!has || cur == n) return 0; has = 0; while (cur \u0026lt; n \u0026amp;\u0026amp; nums[cur] \u0026gt; nums[cur-1]) cur++, has = 1; if (!has || cur != n) return 0; return 1; } }; murmur 最近每天都好無聊，感覺自己正在變成一個更加無趣、更廢的一個存在，但或許這樣就不會再讓任何人失望了吧，我只要繼續埋頭努力就行了，不要再像以前一樣耽溺享樂，過度在意自己的感受;)\n很希望趕快開學，就可以再次躋身忙碌之中，麻木比痛苦好太多了。\n",
-  "keywords": [
-    "LeetCode", "murmur"
-  ],
-  "articleBody": "Approach 就是暴力題，所以才會被歸類在 Easy。只要紀錄每個區間的存在性以及當前的索引，並且細心判斷各種情況就行了，沒有使用到任何演算法知識。\nCode class Solution { public: bool isTrionic(vector\u003cint\u003e\u0026 nums) { int cur = 1, n = nums.size(); bool has = 0; while (cur \u003c n \u0026\u0026 nums[cur] \u003e nums[cur-1]) cur++, has = 1; if (!has || cur == n) return 0; has = 0; while (cur \u003c n \u0026\u0026 nums[cur] \u003c nums[cur-1]) cur++, has = 1; if (!has || cur == n) return 0; has = 0; while (cur \u003c n \u0026\u0026 nums[cur] \u003e nums[cur-1]) cur++, has = 1; if (!has || cur != n) return 0; return 1; } }; murmur 最近每天都好無聊，感覺自己正在變成一個更加無趣、更廢的一個存在，但或許這樣就不會再讓任何人失望了吧，我只要繼續埋頭努力就行了，不要再像以前一樣耽溺享樂，過度在意自己的感受;)\n很希望趕快開學，就可以再次躋身忙碌之中，麻木比痛苦好太多了。\n",
-  "wordCount" : "96",
-  "inLanguage": "en",
-  "datePublished": "2026-02-03T09:06:58+08:00",
-  "dateModified": "2026-02-03T09:06:58+08:00",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://richardlaiis.csie.org/posts/leetcode-3637-trionic-array-i/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "laiyuchi 的破紙箱",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://richardlaiis.csie.org/favicon.ico"
-    }
-  }
-}
 </script>
 </head>
 <body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://richardlaiis.csie.org/" accesskey="h" title="laiyuchi 的破紙箱 (Alt + H)">laiyuchi 的破紙箱</a>
+            <a href="http://localhost:1313/" accesskey="h" title="laiyuchi 的破紙箱 (Alt + H)">laiyuchi 的破紙箱</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -218,27 +127,27 @@ murmur
         </div>
         <ul id="menu">
             <li>
-                <a href="https://richardlaiis.csie.org/categories/" title="categories">
+                <a href="http://localhost:1313/categories/" title="categories">
                     <span>categories</span>
                 </a>
             </li>
             <li>
-                <a href="https://richardlaiis.csie.org/tags/" title="tags">
+                <a href="http://localhost:1313/tags/" title="tags">
                     <span>tags</span>
                 </a>
             </li>
             <li>
-                <a href="https://richardlaiis.csie.org/about/" title="about">
+                <a href="http://localhost:1313/about/" title="about">
                     <span>about</span>
                 </a>
             </li>
             <li>
-                <a href="https://richardlaiis.csie.org/archives/" title="archives">
+                <a href="http://localhost:1313/archives/" title="archives">
                     <span>archives</span>
                 </a>
             </li>
             <li>
-                <a href="https://richardlaiis.csie.org/search/" title="search (Alt &#43; /)" accesskey=/>
+                <a href="http://localhost:1313/search/" title="search (Alt &#43; /)" accesskey=/>
                     <span>search</span>
                 </a>
             </li>
@@ -289,15 +198,15 @@ murmur
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://richardlaiis.csie.org/tags/leetcode/">LeetCode</a></li>
-      <li><a href="https://richardlaiis.csie.org/tags/murmur/">Murmur</a></li>
+      <li><a href="http://localhost:1313/tags/leetcode/">LeetCode</a></li>
+      <li><a href="http://localhost:1313/tags/murmur/">Murmur</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2026 <a href="https://richardlaiis.csie.org/">laiyuchi 的破紙箱</a></span> · 
+        <span>&copy; 2026 <a href="http://localhost:1313/">laiyuchi 的破紙箱</a></span> · 
 
     <span>
         Powered by

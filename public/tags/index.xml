@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on laiyuchi 的破紙箱</title>
-    <link>https://richardlaiis.csie.org/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on laiyuchi 的破紙箱</description>
     <generator>Hugo -- 0.154.5</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 18 Feb 2026 14:28:07 +0800</lastBuildDate>
-    <atom:link href="https://richardlaiis.csie.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LeetCode</title>
-      <link>https://richardlaiis.csie.org/tags/leetcode/</link>
+      <link>http://localhost:1313/tags/leetcode/</link>
       <pubDate>Wed, 18 Feb 2026 14:28:07 +0800</pubDate>
-      <guid>https://richardlaiis.csie.org/tags/leetcode/</guid>
+      <guid>http://localhost:1313/tags/leetcode/</guid>
       <description></description>
     </item>
     <item>
       <title>67</title>
-      <link>https://richardlaiis.csie.org/tags/67/</link>
+      <link>http://localhost:1313/tags/67/</link>
       <pubDate>Sun, 15 Feb 2026 09:29:08 +0800</pubDate>
-      <guid>https://richardlaiis.csie.org/tags/67/</guid>
+      <guid>http://localhost:1313/tags/67/</guid>
       <description></description>
     </item>
     <item>
       <title>Murmur</title>
-      <link>https://richardlaiis.csie.org/tags/murmur/</link>
+      <link>http://localhost:1313/tags/murmur/</link>
       <pubDate>Sat, 14 Feb 2026 16:50:10 +0800</pubDate>
-      <guid>https://richardlaiis.csie.org/tags/murmur/</guid>
+      <guid>http://localhost:1313/tags/murmur/</guid>
       <description></description>
     </item>
     <item>
       <title>Hehe</title>
-      <link>https://richardlaiis.csie.org/tags/hehe/</link>
+      <link>http://localhost:1313/tags/hehe/</link>
       <pubDate>Fri, 30 Jan 2026 16:42:54 +0800</pubDate>
-      <guid>https://richardlaiis.csie.org/tags/hehe/</guid>
+      <guid>http://localhost:1313/tags/hehe/</guid>
       <description></description>
     </item>
     <item>
       <title>Hihihihihi</title>
-      <link>https://richardlaiis.csie.org/tags/hihihihihi/</link>
+      <link>http://localhost:1313/tags/hihihihihi/</link>
       <pubDate>Fri, 30 Jan 2026 16:42:54 +0800</pubDate>
-      <guid>https://richardlaiis.csie.org/tags/hihihihihi/</guid>
+      <guid>http://localhost:1313/tags/hihihihihi/</guid>
       <description></description>
     </item>
     <item>
       <title>Laziness</title>
-      <link>https://richardlaiis.csie.org/tags/laziness/</link>
+      <link>http://localhost:1313/tags/laziness/</link>
       <pubDate>Fri, 30 Jan 2026 16:42:54 +0800</pubDate>
-      <guid>https://richardlaiis.csie.org/tags/laziness/</guid>
+      <guid>http://localhost:1313/tags/laziness/</guid>
       <description></description>
     </item>
   </channel>
