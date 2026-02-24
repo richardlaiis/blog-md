@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>67 on laiyuchi 的破紙箱</title>
-    <link>http://localhost:1313/tags/67/</link>
+    <link>https://richardlaiis.github.io/tags/67/</link>
     <description>Recent content in 67 on laiyuchi 的破紙箱</description>
     <generator>Hugo -- 0.154.5</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 15 Feb 2026 09:29:08 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/67/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://richardlaiis.github.io/tags/67/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Leetcode 67 - Add Binary</title>
-      <link>http://localhost:1313/posts/leetcode-67-add-binary/</link>
+      <link>https://richardlaiis.github.io/posts/leetcode-67-add-binary/</link>
       <pubDate>Sun, 15 Feb 2026 09:29:08 +0800</pubDate>
-      <guid>http://localhost:1313/posts/leetcode-67-add-binary/</guid>
+      <guid>https://richardlaiis.github.io/posts/leetcode-67-add-binary/</guid>
       <description>&lt;h2 id=&#34;solution&#34;&gt;Solution&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Solution&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;

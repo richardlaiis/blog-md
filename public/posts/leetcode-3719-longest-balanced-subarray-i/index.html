@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Leetcode 3719 - Longest Balanced Subarray I | laiyuchi 的破紙箱</title>
 <meta name="keywords" content="LeetCode, murmur">
 <meta name="description" content="Intuition
@@ -31,16 +31,16 @@ public:
 Approach
 一樣是暴力，只是紀錄奇偶元素數量的 set 可以被沿用。（然後用 hash map 應該會跑得比較快，不過一樣可以過，所以我懶得改 :p）">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/posts/leetcode-3719-longest-balanced-subarray-i/">
+<link rel="canonical" href="https://richardlaiis.github.io/posts/leetcode-3719-longest-balanced-subarray-i/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="https://richardlaiis.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://richardlaiis.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://richardlaiis.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://richardlaiis.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://richardlaiis.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/leetcode-3719-longest-balanced-subarray-i/">
+<link rel="alternate" hreflang="en" href="https://richardlaiis.github.io/posts/leetcode-3719-longest-balanced-subarray-i/">
 <noscript>
     <style>
         #theme-toggle,
@@ -92,13 +92,101 @@ Approach
         document.querySelector("html").dataset.theme = 'light';
     }
 
+</script><meta property="og:url" content="https://richardlaiis.github.io/posts/leetcode-3719-longest-balanced-subarray-i/">
+  <meta property="og:site_name" content="laiyuchi 的破紙箱">
+  <meta property="og:title" content="Leetcode 3719 - Longest Balanced Subarray I">
+  <meta property="og:description" content="Intuition Just brute force as the hints said, but unfortunately I got TLE, so this method is too slow QAQ
+而且這其實也是錯的，進到 inner loop 前也要把 nums[i] 加入 odd 或 even，我忘了加。
+class Solution { public: int longestBalanced(vector&lt;int&gt;&amp; nums) { int n = nums.size(); int ans = 0; for (int i = 0; i &lt; n-1; i&#43;&#43;) { for (int j = i&#43;1; j &lt; n; j&#43;&#43;) { unordered_set&lt;int&gt; odd, even; for (int k = i; k &lt;= j; k&#43;&#43;) { if (nums[k] &amp; 1) odd.insert(nums[k]); else even.insert(nums[k]); } if (odd.size() == even.size()) ans = max(ans, j-i&#43;1); } } return ans; } }; Approach 一樣是暴力，只是紀錄奇偶元素數量的 set 可以被沿用。（然後用 hash map 應該會跑得比較快，不過一樣可以過，所以我懶得改 :p）">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-02-10T09:34:51+08:00">
+    <meta property="article:modified_time" content="2026-02-10T09:34:51+08:00">
+    <meta property="article:tag" content="LeetCode">
+    <meta property="article:tag" content="Murmur">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Leetcode 3719 - Longest Balanced Subarray I">
+<meta name="twitter:description" content="Intuition
+Just brute force as the hints said, but unfortunately I got TLE, so this method is too slow QAQ
+而且這其實也是錯的，進到 inner loop 前也要把 nums[i] 加入 odd 或 even，我忘了加。
+class Solution {
+public:
+    int longestBalanced(vector&lt;int&gt;&amp; nums) {
+        int n = nums.size();
+        int ans = 0;
+        for (int i = 0; i &lt; n-1; i&#43;&#43;) {
+            for (int j = i&#43;1; j &lt; n; j&#43;&#43;) {
+                unordered_set&lt;int&gt; odd, even;
+                for (int k = i; k &lt;= j; k&#43;&#43;) {
+                    if (nums[k] &amp; 1) odd.insert(nums[k]);
+                    else even.insert(nums[k]);
+                }
+                if (odd.size() == even.size()) ans = max(ans, j-i&#43;1);
+            }
+        }
+        return ans;
+    }
+};
+Approach
+一樣是暴力，只是紀錄奇偶元素數量的 set 可以被沿用。（然後用 hash map 應該會跑得比較快，不過一樣可以過，所以我懶得改 :p）">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://richardlaiis.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Leetcode 3719 - Longest Balanced Subarray I",
+      "item": "https://richardlaiis.github.io/posts/leetcode-3719-longest-balanced-subarray-i/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Leetcode 3719 - Longest Balanced Subarray I",
+  "name": "Leetcode 3719 - Longest Balanced Subarray I",
+  "description": "Intuition Just brute force as the hints said, but unfortunately I got TLE, so this method is too slow QAQ\n而且這其實也是錯的，進到 inner loop 前也要把 nums[i] 加入 odd 或 even，我忘了加。\nclass Solution { public: int longestBalanced(vector\u0026lt;int\u0026gt;\u0026amp; nums) { int n = nums.size(); int ans = 0; for (int i = 0; i \u0026lt; n-1; i++) { for (int j = i+1; j \u0026lt; n; j++) { unordered_set\u0026lt;int\u0026gt; odd, even; for (int k = i; k \u0026lt;= j; k++) { if (nums[k] \u0026amp; 1) odd.insert(nums[k]); else even.insert(nums[k]); } if (odd.size() == even.size()) ans = max(ans, j-i+1); } } return ans; } }; Approach 一樣是暴力，只是紀錄奇偶元素數量的 set 可以被沿用。（然後用 hash map 應該會跑得比較快，不過一樣可以過，所以我懶得改 :p）\n",
+  "keywords": [
+    "LeetCode", "murmur"
+  ],
+  "articleBody": "Intuition Just brute force as the hints said, but unfortunately I got TLE, so this method is too slow QAQ\n而且這其實也是錯的，進到 inner loop 前也要把 nums[i] 加入 odd 或 even，我忘了加。\nclass Solution { public: int longestBalanced(vector\u003cint\u003e\u0026 nums) { int n = nums.size(); int ans = 0; for (int i = 0; i \u003c n-1; i++) { for (int j = i+1; j \u003c n; j++) { unordered_set\u003cint\u003e odd, even; for (int k = i; k \u003c= j; k++) { if (nums[k] \u0026 1) odd.insert(nums[k]); else even.insert(nums[k]); } if (odd.size() == even.size()) ans = max(ans, j-i+1); } } return ans; } }; Approach 一樣是暴力，只是紀錄奇偶元素數量的 set 可以被沿用。（然後用 hash map 應該會跑得比較快，不過一樣可以過，所以我懶得改 :p）\nAC Code class Solution { public: int longestBalanced(vector\u003cint\u003e\u0026 nums) { int n = nums.size(); int ans = 0; for (int i = 0; i \u003c n-1; i++) { unordered_set\u003cint\u003e odd, even; if (nums[i] \u0026 1) odd.insert(nums[i]); else even.insert(nums[i]); for (int j = i+1; j \u003c n; j++) { if (nums[j] \u0026 1) odd.insert(nums[j]); else even.insert(nums[j]); if (odd.size() == even.size()) ans = max(ans, j-i+1); } } return ans; } }; untitled 怎麼這幾天的題目都有 balanced XD。\n感覺自己確實有一點網路\u0026手遊成癮了，不過最近把自己所有的社群軟體都卸載了，感覺心情有變得比較好，至少暫時停止了比較的心態，而且自己就算消失其實也沒有人會發現、或是想去關心吧，我沒有熟到這樣的朋友，真的早該習慣孑然一人的生活ㄌ。希望開學前能戒掉過度的使用網路，沒有這些有毒的多巴胺我一樣能過的很好，真的。\n加油吧。\n",
+  "wordCount" : "183",
+  "inLanguage": "en",
+  "datePublished": "2026-02-10T09:34:51+08:00",
+  "dateModified": "2026-02-10T09:34:51+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://richardlaiis.github.io/posts/leetcode-3719-longest-balanced-subarray-i/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "laiyuchi 的破紙箱",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://richardlaiis.github.io/favicon.ico"
+    }
+  }
+}
 </script>
 </head>
 <body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="laiyuchi 的破紙箱 (Alt + H)">laiyuchi 的破紙箱</a>
+            <a href="https://richardlaiis.github.io/" accesskey="h" title="laiyuchi 的破紙箱 (Alt + H)">laiyuchi 的破紙箱</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -124,27 +212,27 @@ Approach
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/categories/" title="categories">
+                <a href="https://richardlaiis.github.io/categories/" title="categories">
                     <span>categories</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="tags">
+                <a href="https://richardlaiis.github.io/tags/" title="tags">
                     <span>tags</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/about/" title="about">
+                <a href="https://richardlaiis.github.io/about/" title="about">
                     <span>about</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/archives/" title="archives">
+                <a href="https://richardlaiis.github.io/archives/" title="archives">
                     <span>archives</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/search/" title="search (Alt &#43; /)" accesskey=/>
+                <a href="https://richardlaiis.github.io/search/" title="search (Alt &#43; /)" accesskey=/>
                     <span>search</span>
                 </a>
             </li>
@@ -216,15 +304,15 @@ Approach
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/leetcode/">LeetCode</a></li>
-      <li><a href="http://localhost:1313/tags/murmur/">Murmur</a></li>
+      <li><a href="https://richardlaiis.github.io/tags/leetcode/">LeetCode</a></li>
+      <li><a href="https://richardlaiis.github.io/tags/murmur/">Murmur</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2026 <a href="http://localhost:1313/">laiyuchi 的破紙箱</a></span> · 
+        <span>&copy; 2026 <a href="https://richardlaiis.github.io/">laiyuchi 的破紙箱</a></span> · 
 
     <span>
         Powered by

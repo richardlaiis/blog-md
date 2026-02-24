@@ -2,92 +2,95 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://richardlaiis.github.io/</loc>
+    <lastmod>2026-02-24T16:56:02+08:00</lastmod>
+  </url><url>
+    <loc>https://richardlaiis.github.io/posts/leetcode-1022-sum-of-root-to-leaf-binary-numbers/</loc>
+    <lastmod>2026-02-24T16:56:02+08:00</lastmod>
+  </url><url>
+    <loc>https://richardlaiis.github.io/posts/</loc>
+    <lastmod>2026-02-24T16:56:02+08:00</lastmod>
+  </url><url>
+    <loc>https://richardlaiis.github.io/categories/</loc>
     <lastmod>2026-02-18T14:28:07+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://richardlaiis.github.io/categories/leetcode/</loc>
     <lastmod>2026-02-18T14:28:07+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/leetcode/</loc>
+    <loc>https://richardlaiis.github.io/tags/leetcode/</loc>
     <lastmod>2026-02-18T14:28:07+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/leetcode/</loc>
+    <loc>https://richardlaiis.github.io/posts/leetcode-693-binary-number-with-alternating-bits/</loc>
     <lastmod>2026-02-18T14:28:07+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/leetcode-693-binary-number-with-alternating-bits/</loc>
+    <loc>https://richardlaiis.github.io/tags/</loc>
     <lastmod>2026-02-18T14:28:07+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2026-02-18T14:28:07+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2026-02-18T14:28:07+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/leetcode-401-binary-watch/</loc>
+    <loc>https://richardlaiis.github.io/posts/leetcode-401-binary-watch/</loc>
     <lastmod>2026-02-17T11:42:06+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/67/</loc>
+    <loc>https://richardlaiis.github.io/tags/67/</loc>
     <lastmod>2026-02-15T09:29:08+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/leetcode-67-add-binary/</loc>
+    <loc>https://richardlaiis.github.io/posts/leetcode-67-add-binary/</loc>
     <lastmod>2026-02-15T09:29:08+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/leetcode-799-champagne-tower/</loc>
+    <loc>https://richardlaiis.github.io/posts/leetcode-799-champagne-tower/</loc>
     <lastmod>2026-02-14T16:50:10+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/murmur/</loc>
+    <loc>https://richardlaiis.github.io/tags/murmur/</loc>
     <lastmod>2026-02-14T16:50:10+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/leetcode-3719-longest-balanced-subarray-i/</loc>
+    <loc>https://richardlaiis.github.io/posts/leetcode-3719-longest-balanced-subarray-i/</loc>
     <lastmod>2026-02-10T09:34:51+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/leetcode-1382-balance-a-binary-search-tree/</loc>
+    <loc>https://richardlaiis.github.io/posts/leetcode-1382-balance-a-binary-search-tree/</loc>
     <lastmod>2026-02-09T09:17:27+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/leetcode-110-balanced-binary-tree/</loc>
+    <loc>https://richardlaiis.github.io/posts/leetcode-110-balanced-binary-tree/</loc>
     <lastmod>2026-02-08T08:42:53+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/leetcode-3634-minimum-removals-to-balance-array/</loc>
+    <loc>https://richardlaiis.github.io/posts/leetcode-3634-minimum-removals-to-balance-array/</loc>
     <lastmod>2026-02-06T09:51:25+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/leetcode-3379-transformed-array/</loc>
+    <loc>https://richardlaiis.github.io/posts/leetcode-3379-transformed-array/</loc>
     <lastmod>2026-02-05T08:24:06+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/leetcode-3637-trionic-array-i/</loc>
+    <loc>https://richardlaiis.github.io/posts/leetcode-3637-trionic-array-i/</loc>
     <lastmod>2026-02-03T09:06:58+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/leetcode-minimum-difference-between-largest-and-smallest-value-in-three-moves/</loc>
+    <loc>https://richardlaiis.github.io/posts/leetcode-minimum-difference-between-largest-and-smallest-value-in-three-moves/</loc>
     <lastmod>2026-02-02T08:52:21+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/leetcode-divide-an-array-into-subarrays-with-minimum-cost-i/</loc>
+    <loc>https://richardlaiis.github.io/posts/leetcode-divide-an-array-into-subarrays-with-minimum-cost-i/</loc>
     <lastmod>2026-02-01T08:50:58+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/leetcode-find-smallest-letter-greater-than-target/</loc>
+    <loc>https://richardlaiis.github.io/posts/leetcode-find-smallest-letter-greater-than-target/</loc>
     <lastmod>2026-01-31T09:38:05+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://richardlaiis.github.io/about/</loc>
     <lastmod>2026-01-30T17:25:49+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/hehe/</loc>
+    <loc>https://richardlaiis.github.io/tags/hehe/</loc>
     <lastmod>2026-01-30T16:42:54+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/hihihihihi/</loc>
+    <loc>https://richardlaiis.github.io/tags/hihihihihi/</loc>
     <lastmod>2026-01-30T16:42:54+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/laziness/</loc>
+    <loc>https://richardlaiis.github.io/tags/laziness/</loc>
     <lastmod>2026-01-30T16:42:54+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/myfirstpost/</loc>
+    <loc>https://richardlaiis.github.io/posts/myfirstpost/</loc>
     <lastmod>2026-01-30T16:42:54+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/smile/</loc>
+    <loc>https://richardlaiis.github.io/categories/smile/</loc>
     <lastmod>2026-01-30T16:42:54+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/uwu/</loc>
+    <loc>https://richardlaiis.github.io/categories/uwu/</loc>
     <lastmod>2026-01-30T16:42:54+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/archives/</loc>
+    <loc>https://richardlaiis.github.io/archives/</loc>
   </url><url>
-    <loc>http://localhost:1313/search/</loc>
+    <loc>https://richardlaiis.github.io/search/</loc>
   </url>
 </urlset>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Leetcode 401 - Binary Watch | laiyuchi 的破紙箱</title>
 <meta name="keywords" content="">
 <meta name="description" content="Approach 1 - Classic Enumeration
@@ -30,16 +30,16 @@ public:
 Approach 2 - Binary Enumeration
 這是官解提供的作法之一，因為小時跟分鐘加起來有 10 個 bits，所以有 2^10=1024 種可能性，我們可以透過枚舉 0~1024 的 i，i 從 MSB 開始數四位是小時，剩下六位是分鐘，透過基本的位元運算以及 Approach 1 的一些觀念就可以做出來了。anyway 這題非常簡單，依然是不用動腦的 Easy 類別。">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/posts/leetcode-401-binary-watch/">
+<link rel="canonical" href="https://richardlaiis.github.io/posts/leetcode-401-binary-watch/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="https://richardlaiis.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://richardlaiis.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://richardlaiis.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://richardlaiis.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://richardlaiis.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/leetcode-401-binary-watch/">
+<link rel="alternate" hreflang="en" href="https://richardlaiis.github.io/posts/leetcode-401-binary-watch/">
 <noscript>
     <style>
         #theme-toggle,
@@ -91,13 +91,97 @@ Approach 2 - Binary Enumeration
         document.querySelector("html").dataset.theme = 'light';
     }
 
+</script><meta property="og:url" content="https://richardlaiis.github.io/posts/leetcode-401-binary-watch/">
+  <meta property="og:site_name" content="laiyuchi 的破紙箱">
+  <meta property="og:title" content="Leetcode 401 - Binary Watch">
+  <meta property="og:description" content="Approach 1 - Classic Enumeration 把所有小時、分鐘的組合列出來，然後看他們的 set bit 的數量加起來是不是 turnedOn。這是我一開始想到的作法，此外似乎 C&#43;&#43; 20 就開始有 std::format() 可以用了，還蠻酷的:) 我第一次使用
+AC Code class Solution { public: vector&lt;string&gt; readBinaryWatch(int turnedOn) { vector&lt;string&gt; ans; for (int h = 0; h &lt; 12; h&#43;&#43;) { for (int m = 0; m &lt; 60; m&#43;&#43;) { int t1 = __builtin_popcount(h); int t2 = __builtin_popcount(m); if (t1&#43;t2 == turnedOn) { string time = std::format(&#34;{}:{:02}&#34;, h, m); ans.push_back(time); } } } return ans; } }; Approach 2 - Binary Enumeration 這是官解提供的作法之一，因為小時跟分鐘加起來有 10 個 bits，所以有 2^10=1024 種可能性，我們可以透過枚舉 0~1024 的 i，i 從 MSB 開始數四位是小時，剩下六位是分鐘，透過基本的位元運算以及 Approach 1 的一些觀念就可以做出來了。anyway 這題非常簡單，依然是不用動腦的 Easy 類別。">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-02-17T11:42:06+08:00">
+    <meta property="article:modified_time" content="2026-02-17T11:42:06+08:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Leetcode 401 - Binary Watch">
+<meta name="twitter:description" content="Approach 1 - Classic Enumeration
+把所有小時、分鐘的組合列出來，然後看他們的 set bit 的數量加起來是不是 turnedOn。這是我一開始想到的作法，此外似乎 C&#43;&#43; 20 就開始有 std::format() 可以用了，還蠻酷的:) 我第一次使用
+AC Code
+class Solution {
+public:
+    vector&lt;string&gt; readBinaryWatch(int turnedOn) {
+        vector&lt;string&gt; ans;
+        for (int h = 0; h &lt; 12; h&#43;&#43;) {
+            for (int m = 0; m &lt; 60; m&#43;&#43;) {
+                int t1 = __builtin_popcount(h);
+                int t2 = __builtin_popcount(m);
+                if (t1&#43;t2 == turnedOn) {
+                    string time = std::format(&#34;{}:{:02}&#34;, h, m);
+                    ans.push_back(time);
+                }
+            }
+        }
+        return ans;
+    }
+};
+Approach 2 - Binary Enumeration
+這是官解提供的作法之一，因為小時跟分鐘加起來有 10 個 bits，所以有 2^10=1024 種可能性，我們可以透過枚舉 0~1024 的 i，i 從 MSB 開始數四位是小時，剩下六位是分鐘，透過基本的位元運算以及 Approach 1 的一些觀念就可以做出來了。anyway 這題非常簡單，依然是不用動腦的 Easy 類別。">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://richardlaiis.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Leetcode 401 - Binary Watch",
+      "item": "https://richardlaiis.github.io/posts/leetcode-401-binary-watch/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Leetcode 401 - Binary Watch",
+  "name": "Leetcode 401 - Binary Watch",
+  "description": "Approach 1 - Classic Enumeration 把所有小時、分鐘的組合列出來，然後看他們的 set bit 的數量加起來是不是 turnedOn。這是我一開始想到的作法，此外似乎 C++ 20 就開始有 std::format() 可以用了，還蠻酷的:) 我第一次使用\nAC Code class Solution { public: vector\u0026lt;string\u0026gt; readBinaryWatch(int turnedOn) { vector\u0026lt;string\u0026gt; ans; for (int h = 0; h \u0026lt; 12; h++) { for (int m = 0; m \u0026lt; 60; m++) { int t1 = __builtin_popcount(h); int t2 = __builtin_popcount(m); if (t1+t2 == turnedOn) { string time = std::format(\u0026#34;{}:{:02}\u0026#34;, h, m); ans.push_back(time); } } } return ans; } }; Approach 2 - Binary Enumeration 這是官解提供的作法之一，因為小時跟分鐘加起來有 10 個 bits，所以有 2^10=1024 種可能性，我們可以透過枚舉 0~1024 的 i，i 從 MSB 開始數四位是小時，剩下六位是分鐘，透過基本的位元運算以及 Approach 1 的一些觀念就可以做出來了。anyway 這題非常簡單，依然是不用動腦的 Easy 類別。\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "Approach 1 - Classic Enumeration 把所有小時、分鐘的組合列出來，然後看他們的 set bit 的數量加起來是不是 turnedOn。這是我一開始想到的作法，此外似乎 C++ 20 就開始有 std::format() 可以用了，還蠻酷的:) 我第一次使用\nAC Code class Solution { public: vector\u003cstring\u003e readBinaryWatch(int turnedOn) { vector\u003cstring\u003e ans; for (int h = 0; h \u003c 12; h++) { for (int m = 0; m \u003c 60; m++) { int t1 = __builtin_popcount(h); int t2 = __builtin_popcount(m); if (t1+t2 == turnedOn) { string time = std::format(\"{}:{:02}\", h, m); ans.push_back(time); } } } return ans; } }; Approach 2 - Binary Enumeration 這是官解提供的作法之一，因為小時跟分鐘加起來有 10 個 bits，所以有 2^10=1024 種可能性，我們可以透過枚舉 0~1024 的 i，i 從 MSB 開始數四位是小時，剩下六位是分鐘，透過基本的位元運算以及 Approach 1 的一些觀念就可以做出來了。anyway 這題非常簡單，依然是不用動腦的 Easy 類別。\n然後這個作法比 Approach 快了一點，but idk why.\nAC Code class Solution { public: vector\u003cstring\u003e readBinaryWatch(int turnedOn) { vector\u003cstring\u003e ans; for (int i = 0; i \u003c 1024; i++) { int h = i\u003e\u003e6, m = i\u002663; if (h \u003c 12 \u0026\u0026 m \u003c 60 \u0026\u0026 __builtin_popcount(h)+__builtin_popcount(m)==turnedOn) { ans.emplace_back(std::format(\"{}:{:02}\", h, m)); } } return ans; } }; Untitled 今天是大年初一，祝各位新年順利！\n",
+  "wordCount" : "154",
+  "inLanguage": "en",
+  "datePublished": "2026-02-17T11:42:06+08:00",
+  "dateModified": "2026-02-17T11:42:06+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://richardlaiis.github.io/posts/leetcode-401-binary-watch/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "laiyuchi 的破紙箱",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://richardlaiis.github.io/favicon.ico"
+    }
+  }
+}
 </script>
 </head>
 <body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="laiyuchi 的破紙箱 (Alt + H)">laiyuchi 的破紙箱</a>
+            <a href="https://richardlaiis.github.io/" accesskey="h" title="laiyuchi 的破紙箱 (Alt + H)">laiyuchi 的破紙箱</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -123,27 +207,27 @@ Approach 2 - Binary Enumeration
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/categories/" title="categories">
+                <a href="https://richardlaiis.github.io/categories/" title="categories">
                     <span>categories</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="tags">
+                <a href="https://richardlaiis.github.io/tags/" title="tags">
                     <span>tags</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/about/" title="about">
+                <a href="https://richardlaiis.github.io/about/" title="about">
                     <span>about</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/archives/" title="archives">
+                <a href="https://richardlaiis.github.io/archives/" title="archives">
                     <span>archives</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/search/" title="search (Alt &#43; /)" accesskey=/>
+                <a href="https://richardlaiis.github.io/search/" title="search (Alt &#43; /)" accesskey=/>
                     <span>search</span>
                 </a>
             </li>
@@ -213,7 +297,7 @@ Approach 2 - Binary Enumeration
     </main>
     
 <footer class="footer">
-        <span>&copy; 2026 <a href="http://localhost:1313/">laiyuchi 的破紙箱</a></span> · 
+        <span>&copy; 2026 <a href="https://richardlaiis.github.io/">laiyuchi 的破紙箱</a></span> · 
 
     <span>
         Powered by

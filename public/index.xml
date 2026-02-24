@@ -2,17 +2,46 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>laiyuchi 的破紙箱</title>
-    <link>http://localhost:1313/</link>
+    <link>https://richardlaiis.github.io/</link>
     <description>Recent content on laiyuchi 的破紙箱</description>
     <generator>Hugo -- 0.154.5</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Feb 2026 14:28:07 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 24 Feb 2026 16:56:02 +0800</lastBuildDate>
+    <atom:link href="https://richardlaiis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 1022 - Sum of Root to Leaf Binary Numbers</title>
+      <link>https://richardlaiis.github.io/posts/leetcode-1022-sum-of-root-to-leaf-binary-numbers/</link>
+      <pubDate>Tue, 24 Feb 2026 16:56:02 +0800</pubDate>
+      <guid>https://richardlaiis.github.io/posts/leetcode-1022-sum-of-root-to-leaf-binary-numbers/</guid>
+      <description>&lt;p&gt;今天用Python寫 :p&lt;/p&gt;
+&lt;h2 id=&#34;code&#34;&gt;Code&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Definition for a binary tree node.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# class TreeNode:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#     def __init__(self, val=0, left=None, right=None):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#         self.val = val&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#         self.left = left&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#         self.right = right&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Solution&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ans &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;traverse&lt;/span&gt;(self, root, cur):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;not&lt;/span&gt; root:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;not&lt;/span&gt; root&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;left &lt;span style=&#34;color:#f92672&#34;&gt;and&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;not&lt;/span&gt; root&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;right:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            cur &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; cur&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; root&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;val
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ans &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; cur
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;traverse(root&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;left, cur&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; root&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;val)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;traverse(root&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;right, cur&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; root&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;val)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sumRootToLeaf&lt;/span&gt;(self, root: Optional[TreeNode]) &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; int:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;traverse(root, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ans
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
     <item>
       <title>LeetCode 693 - Binary Number With Alternating Bits</title>
-      <link>http://localhost:1313/posts/leetcode-693-binary-number-with-alternating-bits/</link>
+      <link>https://richardlaiis.github.io/posts/leetcode-693-binary-number-with-alternating-bits/</link>
       <pubDate>Wed, 18 Feb 2026 14:28:07 +0800</pubDate>
-      <guid>http://localhost:1313/posts/leetcode-693-binary-number-with-alternating-bits/</guid>
+      <guid>https://richardlaiis.github.io/posts/leetcode-693-binary-number-with-alternating-bits/</guid>
       <description>&lt;h2 id=&#34;approach-1-brute-force&#34;&gt;Approach 1 (brute force)&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Solution&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;
@@ -52,9 +81,9 @@
     </item>
     <item>
       <title>Leetcode 401 - Binary Watch</title>
-      <link>http://localhost:1313/posts/leetcode-401-binary-watch/</link>
+      <link>https://richardlaiis.github.io/posts/leetcode-401-binary-watch/</link>
       <pubDate>Tue, 17 Feb 2026 11:42:06 +0800</pubDate>
-      <guid>http://localhost:1313/posts/leetcode-401-binary-watch/</guid>
+      <guid>https://richardlaiis.github.io/posts/leetcode-401-binary-watch/</guid>
       <description>&lt;h2 id=&#34;approach-1---classic-enumeration&#34;&gt;Approach 1 - Classic Enumeration&lt;/h2&gt;
 &lt;p&gt;把所有小時、分鐘的組合列出來，然後看他們的 set bit 的數量加起來是不是 &lt;code&gt;turnedOn&lt;/code&gt;。這是我一開始想到的作法，此外似乎 C++ 20 就開始有 &lt;code&gt;std::format()&lt;/code&gt; 可以用了，還蠻酷的:) 我第一次使用&lt;/p&gt;
 &lt;h3 id=&#34;ac-code&#34;&gt;AC Code&lt;/h3&gt;
@@ -80,9 +109,9 @@
     </item>
     <item>
       <title>Leetcode 67 - Add Binary</title>
-      <link>http://localhost:1313/posts/leetcode-67-add-binary/</link>
+      <link>https://richardlaiis.github.io/posts/leetcode-67-add-binary/</link>
       <pubDate>Sun, 15 Feb 2026 09:29:08 +0800</pubDate>
-      <guid>http://localhost:1313/posts/leetcode-67-add-binary/</guid>
+      <guid>https://richardlaiis.github.io/posts/leetcode-67-add-binary/</guid>
       <description>&lt;h2 id=&#34;solution&#34;&gt;Solution&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Solution&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;
@@ -114,9 +143,9 @@
     </item>
     <item>
       <title>Leetcode 799 - Champagne Tower</title>
-      <link>http://localhost:1313/posts/leetcode-799-champagne-tower/</link>
+      <link>https://richardlaiis.github.io/posts/leetcode-799-champagne-tower/</link>
       <pubDate>Sat, 14 Feb 2026 16:50:10 +0800</pubDate>
-      <guid>http://localhost:1313/posts/leetcode-799-champagne-tower/</guid>
+      <guid>https://richardlaiis.github.io/posts/leetcode-799-champagne-tower/</guid>
       <description>&lt;h2 id=&#34;solution&#34;&gt;Solution&lt;/h2&gt;
 &lt;p&gt;試著模擬一次倒下所有香檳後的過程。不過這作法基本上是參考官解的，但對我來說蠻神奇的，因此選擇發上來紀錄一下。&lt;/p&gt;
 &lt;h2 id=&#34;code&#34;&gt;Code&lt;/h2&gt;
@@ -144,9 +173,9 @@
     </item>
     <item>
       <title>Leetcode 3719 - Longest Balanced Subarray I</title>
-      <link>http://localhost:1313/posts/leetcode-3719-longest-balanced-subarray-i/</link>
+      <link>https://richardlaiis.github.io/posts/leetcode-3719-longest-balanced-subarray-i/</link>
       <pubDate>Tue, 10 Feb 2026 09:34:51 +0800</pubDate>
-      <guid>http://localhost:1313/posts/leetcode-3719-longest-balanced-subarray-i/</guid>
+      <guid>https://richardlaiis.github.io/posts/leetcode-3719-longest-balanced-subarray-i/</guid>
       <description>&lt;h2 id=&#34;intuition&#34;&gt;Intuition&lt;/h2&gt;
 &lt;p&gt;Just brute force as the hints said, but unfortunately I got TLE, so this method is too slow QAQ&lt;/p&gt;
 &lt;p&gt;而且這其實也是錯的，進到 inner loop 前也要把 &lt;code&gt;nums[i]&lt;/code&gt; 加入 &lt;code&gt;odd&lt;/code&gt; 或 &lt;code&gt;even&lt;/code&gt;，我忘了加。&lt;/p&gt;
@@ -173,9 +202,9 @@
     </item>
     <item>
       <title>Leetcode 1382 - Balance a Binary Search Tree</title>
-      <link>http://localhost:1313/posts/leetcode-1382-balance-a-binary-search-tree/</link>
+      <link>https://richardlaiis.github.io/posts/leetcode-1382-balance-a-binary-search-tree/</link>
       <pubDate>Mon, 09 Feb 2026 09:17:27 +0800</pubDate>
-      <guid>http://localhost:1313/posts/leetcode-1382-balance-a-binary-search-tree/</guid>
+      <guid>https://richardlaiis.github.io/posts/leetcode-1382-balance-a-binary-search-tree/</guid>
       <description>&lt;h2 id=&#34;題目連結&#34;&gt;題目連結&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://leetcode.com/problems/balance-a-binary-search-tree/&#34;&gt;https://leetcode.com/problems/balance-a-binary-search-tree/&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;approach&#34;&gt;Approach&lt;/h2&gt;
@@ -208,9 +237,9 @@
     </item>
     <item>
       <title>Leetcode 110 - Balanced Binary Tree</title>
-      <link>http://localhost:1313/posts/leetcode-110-balanced-binary-tree/</link>
+      <link>https://richardlaiis.github.io/posts/leetcode-110-balanced-binary-tree/</link>
       <pubDate>Sun, 08 Feb 2026 08:42:53 +0800</pubDate>
-      <guid>http://localhost:1313/posts/leetcode-110-balanced-binary-tree/</guid>
+      <guid>https://richardlaiis.github.io/posts/leetcode-110-balanced-binary-tree/</guid>
       <description>&lt;h2 id=&#34;approach&#34;&gt;Approach&lt;/h2&gt;
 &lt;p&gt;By definition, one binary tree is balanced if and only if its two subtree&amp;rsquo;s depths&amp;rsquo; difference &amp;lt;= 1 and the two subtrees are both balanced. Hence, we can write the recursive function for &lt;code&gt;isBalanced()&lt;/code&gt; and the function for the calculation of depth &lt;code&gt;depth()&lt;/code&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;code&#34;&gt;Code&lt;/h2&gt;
@@ -241,9 +270,9 @@
     </item>
     <item>
       <title>Leetcode 3634 - Minimum Removals to Balance Array</title>
-      <link>http://localhost:1313/posts/leetcode-3634-minimum-removals-to-balance-array/</link>
+      <link>https://richardlaiis.github.io/posts/leetcode-3634-minimum-removals-to-balance-array/</link>
       <pubDate>Fri, 06 Feb 2026 09:51:25 +0800</pubDate>
-      <guid>http://localhost:1313/posts/leetcode-3634-minimum-removals-to-balance-array/</guid>
+      <guid>https://richardlaiis.github.io/posts/leetcode-3634-minimum-removals-to-balance-array/</guid>
       <description>&lt;h2 id=&#34;approach&#34;&gt;Approach&lt;/h2&gt;
 &lt;p&gt;Two pointers + sorting&lt;/p&gt;
 &lt;h2 id=&#34;complexity&#34;&gt;Complexity&lt;/h2&gt;
@@ -279,9 +308,9 @@
     </item>
     <item>
       <title>Leetcode 3379 - Transformed Array</title>
-      <link>http://localhost:1313/posts/leetcode-3379-transformed-array/</link>
+      <link>https://richardlaiis.github.io/posts/leetcode-3379-transformed-array/</link>
       <pubDate>Thu, 05 Feb 2026 08:24:06 +0800</pubDate>
-      <guid>http://localhost:1313/posts/leetcode-3379-transformed-array/</guid>
+      <guid>https://richardlaiis.github.io/posts/leetcode-3379-transformed-array/</guid>
       <description>&lt;h2 id=&#34;approach&#34;&gt;Approach&lt;/h2&gt;
 &lt;p&gt;基本上照著題目的敘述寫就好了，很簡單。不過取模的時候要注意，C的模運算不一定會是正的，所以寫的時候要避免產生負的index，我竟然不知道這件事情qwq&lt;/p&gt;
 &lt;h2 id=&#34;code&#34;&gt;Code&lt;/h2&gt;
@@ -297,9 +326,9 @@
     </item>
     <item>
       <title>LeetCode 3637 - Trionic Array I</title>
-      <link>http://localhost:1313/posts/leetcode-3637-trionic-array-i/</link>
+      <link>https://richardlaiis.github.io/posts/leetcode-3637-trionic-array-i/</link>
       <pubDate>Tue, 03 Feb 2026 09:06:58 +0800</pubDate>
-      <guid>http://localhost:1313/posts/leetcode-3637-trionic-array-i/</guid>
+      <guid>https://richardlaiis.github.io/posts/leetcode-3637-trionic-array-i/</guid>
       <description>&lt;h2 id=&#34;approach&#34;&gt;Approach&lt;/h2&gt;
 &lt;p&gt;就是暴力題，所以才會被歸類在 Easy。只要紀錄每個區間的存在性以及當前的索引，並且細心判斷各種情況就行了，沒有使用到任何演算法知識。&lt;/p&gt;
 &lt;h2 id=&#34;code&#34;&gt;Code&lt;/h2&gt;
@@ -329,9 +358,9 @@
     </item>
     <item>
       <title>Leetcode 1509 - Minimum Difference Between Largest and Smallest Value in Three Moves</title>
-      <link>http://localhost:1313/posts/leetcode-minimum-difference-between-largest-and-smallest-value-in-three-moves/</link>
+      <link>https://richardlaiis.github.io/posts/leetcode-minimum-difference-between-largest-and-smallest-value-in-three-moves/</link>
       <pubDate>Mon, 02 Feb 2026 08:52:21 +0800</pubDate>
-      <guid>http://localhost:1313/posts/leetcode-minimum-difference-between-largest-and-smallest-value-in-three-moves/</guid>
+      <guid>https://richardlaiis.github.io/posts/leetcode-minimum-difference-between-largest-and-smallest-value-in-three-moves/</guid>
       <description>&lt;h2 id=&#34;approach&#34;&gt;Approach&lt;/h2&gt;
 &lt;p&gt;有 4 種方式去移除三個元素，在將陣列由小至大排序後：&lt;/p&gt;
 &lt;ol&gt;
@@ -365,9 +394,9 @@
     </item>
     <item>
       <title>Leetcode 3010 - Divide an Array Into Subarrays With Minimum Cost I</title>
-      <link>http://localhost:1313/posts/leetcode-divide-an-array-into-subarrays-with-minimum-cost-i/</link>
+      <link>https://richardlaiis.github.io/posts/leetcode-divide-an-array-into-subarrays-with-minimum-cost-i/</link>
       <pubDate>Sun, 01 Feb 2026 08:50:58 +0800</pubDate>
-      <guid>http://localhost:1313/posts/leetcode-divide-an-array-into-subarrays-with-minimum-cost-i/</guid>
+      <guid>https://richardlaiis.github.io/posts/leetcode-divide-an-array-into-subarrays-with-minimum-cost-i/</guid>
       <description>&lt;h2 id=&#34;approach&#34;&gt;Approach&lt;/h2&gt;
 &lt;p&gt;To minimize the total cost, we need to partition the array using the three smallest elements. However, since the first element is always included, the final answer is simply the first element plus the two smallest elements from the rest of the array.&lt;/p&gt;
 &lt;p&gt;In my code, I sort the array (excluding the first element) using built-in &lt;code&gt;sort()&lt;/code&gt; function, but there might be other &lt;a href=&#34;https://www.geeksforgeeks.org/dsa/find-k-smallest-elements-in-an-array/&#34;&gt;methods&lt;/a&gt; with better time complexity.&lt;/p&gt;
@@ -384,9 +413,9 @@
     </item>
     <item>
       <title>Leetcode 744 - Find Smallest Letter Greater Than Target</title>
-      <link>http://localhost:1313/posts/leetcode-find-smallest-letter-greater-than-target/</link>
+      <link>https://richardlaiis.github.io/posts/leetcode-find-smallest-letter-greater-than-target/</link>
       <pubDate>Sat, 31 Jan 2026 09:38:05 +0800</pubDate>
-      <guid>http://localhost:1313/posts/leetcode-find-smallest-letter-greater-than-target/</guid>
+      <guid>https://richardlaiis.github.io/posts/leetcode-find-smallest-letter-greater-than-target/</guid>
       <description>&lt;h2 id=&#34;approach&#34;&gt;Approach&lt;/h2&gt;
 &lt;p&gt;Binary search on the location of first letter greater than target. (Using built-in upperbound function in C++ is good as well)&lt;/p&gt;
 &lt;h2 id=&#34;solution&#34;&gt;Solution&lt;/h2&gt;
@@ -409,16 +438,16 @@
     </item>
     <item>
       <title>About</title>
-      <link>http://localhost:1313/about/</link>
+      <link>https://richardlaiis.github.io/about/</link>
       <pubDate>Fri, 30 Jan 2026 17:25:49 +0800</pubDate>
-      <guid>http://localhost:1313/about/</guid>
+      <guid>https://richardlaiis.github.io/about/</guid>
       <description>&lt;p&gt;我是 Richard Lai，是臺大資工 B13 的小學渣，希望透過這個 Blog 紀錄未來的修課心得、日記，我想要進去 Google 上班RRRRRR&lt;/p&gt;</description>
     </item>
     <item>
       <title>Myfirstpost</title>
-      <link>http://localhost:1313/posts/myfirstpost/</link>
+      <link>https://richardlaiis.github.io/posts/myfirstpost/</link>
       <pubDate>Fri, 30 Jan 2026 16:42:54 +0800</pubDate>
-      <guid>http://localhost:1313/posts/myfirstpost/</guid>
+      <guid>https://richardlaiis.github.io/posts/myfirstpost/</guid>
       <description>&lt;h2 id=&#34;hahahahahahaha&#34;&gt;hahahahahahaha&lt;/h2&gt;
 &lt;p&gt;ehehehehehe&lt;/p&gt;
 &lt;h3 id=&#34;破房&#34;&gt;破房&lt;/h3&gt;
