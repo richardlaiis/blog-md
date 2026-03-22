@@ -4,15 +4,22 @@
     <title>Categories on laiyuchi 的破紙箱</title>
     <link>https://richardlaiis.github.io/categories/</link>
     <description>Recent content in Categories on laiyuchi 的破紙箱</description>
-    <generator>Hugo -- 0.154.5</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Feb 2026 14:28:07 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 22 Mar 2026 09:15:31 +0800</lastBuildDate>
     <atom:link href="https://richardlaiis.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LeetCode</title>
       <link>https://richardlaiis.github.io/categories/leetcode/</link>
-      <pubDate>Wed, 18 Feb 2026 14:28:07 +0800</pubDate>
+      <pubDate>Sun, 22 Mar 2026 09:15:31 +0800</pubDate>
       <guid>https://richardlaiis.github.io/categories/leetcode/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Murmur</title>
+      <link>https://richardlaiis.github.io/categories/murmur/</link>
+      <pubDate>Sun, 22 Mar 2026 09:15:31 +0800</pubDate>
+      <guid>https://richardlaiis.github.io/categories/murmur/</guid>
       <description></description>
     </item>
     <item>

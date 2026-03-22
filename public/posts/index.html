@@ -74,11 +74,11 @@
 </script><meta property="og:url" content="https://richardlaiis.github.io/posts/">
   <meta property="og:site_name" content="laiyuchi 的破紙箱">
   <meta property="og:title" content="Posts">
-  <meta property="og:locale" content="en-us">
+  <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Posts">
-<meta name="twitter:description" content="">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Posts">
 
 
 <script type="application/ld+json">
@@ -159,6 +159,20 @@
     Posts
   </h1>
 </header>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Leetcode 1886 - Determine Whether Matrix Can Be Obtained by Rotation
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Problem Link https://leetcode.com/problems/determine-whether-matrix-can-be-obtained-by-rotation/
+Solution class Solution { public: bool equal(vector&lt;vector&lt;int&gt;&gt;&amp; a, vector&lt;vector&lt;int&gt;&gt;&amp; b) { int n = a.size(); for (int i = 0; i &lt; n; i&#43;&#43;) { for (int j = 0; j &lt; n; j&#43;&#43;) { if (a[i][j] != b[i][j]) return false; } } return true; } void rotate(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) { int n = matrix.size(); reverse(matrix.begin(), matrix.end()); for (int i = 0; i &lt; n; i&#43;&#43;) { for (int j = i&#43;1; j &lt; n; j&#43;&#43;) { swap(matrix[i][j], matrix[j][i]); } } } bool findRotation(vector&lt;vector&lt;int&gt;&gt;&amp; mat, vector&lt;vector&lt;int&gt;&gt;&amp; target) { for (int i = 0; i &lt; 4; i&#43;&#43;) { if (equal(mat, target)) return true; rotate(mat); } return false; } }; untitled 很久沒有更新了，主要原因還是因為自己的惰性。這次的旋轉可以透過多開一個陣列存的方式實現。但如果要省空間，也可以 in-place 地做，一種方式是透過對稱性，先把整個矩陣上下翻轉，再沿著主對角線翻轉 (這是順時針，如果要逆時針就是先左右翻轉，再延主對角線翻轉)
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-03-22 09:15:31 +0800 CST'>March 22, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to Leetcode 1886 - Determine Whether Matrix Can Be Obtained by Rotation" href="https://richardlaiis.github.io/posts/leetcode-1886-determine-whether-matrix-can-be-obtained-by-rotation/"></a>
+</article>
 
 <article class="post-entry"> 
   <header class="entry-header">
@@ -296,19 +310,6 @@ Code class Solution { private: void dfs(TreeNode* root, vector&lt;int&gt;&amp; a
   </div>
   <footer class="entry-footer"><span title='2026-02-09 09:17:27 +0800 CST'>February 9, 2026</span></footer>
   <a class="entry-link" aria-label="post link to Leetcode 1382 - Balance a Binary Search Tree" href="https://richardlaiis.github.io/posts/leetcode-1382-balance-a-binary-search-tree/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Leetcode 110 - Balanced Binary Tree
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Approach By definition, one binary tree is balanced if and only if its two subtree’s depths’ difference &lt;= 1 and the two subtrees are both balanced. Hence, we can write the recursive function for isBalanced() and the function for the calculation of depth depth().
-Code /** * Definition for a binary tree node. * struct TreeNode { * int val; * TreeNode *left; * TreeNode *right; * TreeNode() : val(0), left(nullptr), right(nullptr) {} * TreeNode(int x) : val(x), left(nullptr), right(nullptr) {} * TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {} * }; */ class Solution { public: int depth(TreeNode* root) { if (!root) return 0; return max(depth(root-&gt;left), depth(root-&gt;right)) &#43; 1; } bool isBalanced(TreeNode* root) { if (!root) return true; bool diffvalid = (abs(depth(root-&gt;left)-depth(root-&gt;right)) &lt;= 1); return diffvalid &amp;&amp; isBalanced(root-&gt;left) &amp;&amp; isBalanced(root-&gt;right); } }; </p>
-  </div>
-  <footer class="entry-footer"><span title='2026-02-08 08:42:53 +0800 CST'>February 8, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to Leetcode 110 - Balanced Binary Tree" href="https://richardlaiis.github.io/posts/leetcode-110-balanced-binary-tree/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

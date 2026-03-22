@@ -74,11 +74,11 @@
 </script><meta property="og:url" content="https://richardlaiis.github.io/tags/murmur/">
   <meta property="og:site_name" content="laiyuchi 的破紙箱">
   <meta property="og:title" content="Murmur">
-  <meta property="og:locale" content="en-us">
+  <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Murmur">
-<meta name="twitter:description" content="">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Murmur">
 
 </head>
 <body class="list" id="top">
@@ -144,6 +144,20 @@
     Murmur
   </h1>
 </header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Leetcode 1886 - Determine Whether Matrix Can Be Obtained by Rotation
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Problem Link https://leetcode.com/problems/determine-whether-matrix-can-be-obtained-by-rotation/
+Solution class Solution { public: bool equal(vector&lt;vector&lt;int&gt;&gt;&amp; a, vector&lt;vector&lt;int&gt;&gt;&amp; b) { int n = a.size(); for (int i = 0; i &lt; n; i&#43;&#43;) { for (int j = 0; j &lt; n; j&#43;&#43;) { if (a[i][j] != b[i][j]) return false; } } return true; } void rotate(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) { int n = matrix.size(); reverse(matrix.begin(), matrix.end()); for (int i = 0; i &lt; n; i&#43;&#43;) { for (int j = i&#43;1; j &lt; n; j&#43;&#43;) { swap(matrix[i][j], matrix[j][i]); } } } bool findRotation(vector&lt;vector&lt;int&gt;&gt;&amp; mat, vector&lt;vector&lt;int&gt;&gt;&amp; target) { for (int i = 0; i &lt; 4; i&#43;&#43;) { if (equal(mat, target)) return true; rotate(mat); } return false; } }; untitled 很久沒有更新了，主要原因還是因為自己的惰性。這次的旋轉可以透過多開一個陣列存的方式實現。但如果要省空間，也可以 in-place 地做，一種方式是透過對稱性，先把整個矩陣上下翻轉，再沿著主對角線翻轉 (這是順時針，如果要逆時針就是先左右翻轉，再延主對角線翻轉)
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-03-22 09:15:31 +0800 CST'>March 22, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to Leetcode 1886 - Determine Whether Matrix Can Be Obtained by Rotation" href="https://richardlaiis.github.io/posts/leetcode-1886-determine-whether-matrix-can-be-obtained-by-rotation/"></a>
+</article>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">

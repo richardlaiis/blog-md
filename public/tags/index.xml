@@ -4,22 +4,22 @@
     <title>Tags on laiyuchi 的破紙箱</title>
     <link>https://richardlaiis.github.io/tags/</link>
     <description>Recent content in Tags on laiyuchi 的破紙箱</description>
-    <generator>Hugo -- 0.154.5</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 Feb 2026 21:09:01 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 22 Mar 2026 09:15:31 +0800</lastBuildDate>
     <atom:link href="https://richardlaiis.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Murmur</title>
-      <link>https://richardlaiis.github.io/tags/murmur/</link>
-      <pubDate>Thu, 26 Feb 2026 21:09:01 +0800</pubDate>
-      <guid>https://richardlaiis.github.io/tags/murmur/</guid>
-      <description></description>
-    </item>
     <item>
       <title>LeetCode</title>
       <link>https://richardlaiis.github.io/tags/leetcode/</link>
-      <pubDate>Wed, 18 Feb 2026 14:28:07 +0800</pubDate>
+      <pubDate>Sun, 22 Mar 2026 09:15:31 +0800</pubDate>
       <guid>https://richardlaiis.github.io/tags/leetcode/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Murmur</title>
+      <link>https://richardlaiis.github.io/tags/murmur/</link>
+      <pubDate>Sun, 22 Mar 2026 09:15:31 +0800</pubDate>
+      <guid>https://richardlaiis.github.io/tags/murmur/</guid>
       <description></description>
     </item>
     <item>
