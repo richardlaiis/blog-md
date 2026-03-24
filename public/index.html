@@ -203,6 +203,19 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Leetcode 2906 - Construct Product Matrix
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Solution 對每個位置存 prefix product 跟 suffix product (這個位置以前所有元素的乘積，和這個位置以後所有元素的 product)，最後把這兩個數字乘起來(記得模12345)就好了:)))
+class Solution { public: vector&lt;vector&lt;int&gt;&gt; constructProductMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; grid) { const int mod = 12345; int n = grid.size(), m = grid[0].size(); vector&lt;vector&lt;int&gt;&gt; prefixP(n, vector&lt;int&gt;(m, 1)); vector&lt;vector&lt;int&gt;&gt; suffixP(n, vector&lt;int&gt;(m, 1)); long long cur = 1; for (int i = 0; i &lt; n; i&#43;&#43;) { for (int j = 0; j &lt; m; j&#43;&#43;) { if (i == j &amp;&amp; i == 0) { cur = (cur * grid[i][j]) % mod; continue; } prefixP[i][j] = cur % mod; cur = (cur * grid[i][j]) % mod; } } cur = 1; for (int i = n-1; i &gt;= 0; i--) { for (int j = m-1; j &gt;= 0; j--) { if (i == n-1 &amp;&amp; j == m-1) { cur = (cur * grid[i][j]) % mod; continue; } suffixP[i][j] = cur % mod; cur = (cur * grid[i][j]) % mod; } } for (int i = 0; i &lt; n; i&#43;&#43;) { for (int j = 0; j &lt; m; j&#43;&#43;) { grid[i][j] = (prefixP[i][j] * suffixP[i][j]) % mod; } } return grid; } }; </p>
+  </div>
+  <footer class="entry-footer"><span title='2026-03-24 09:38:39 +0800 CST'>March 24, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to Leetcode 2906 - Construct Product Matrix" href="https://richardlaiis.github.io/posts/leetcode-2906-construct-product-matrix/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Leetcode 1886 - Determine Whether Matrix Can Be Obtained by Rotation
     </h2>
   </header>
@@ -337,20 +350,6 @@ class Solution { public: int longestBalanced(vector&lt;int&gt;&amp; nums) { int 
   </div>
   <footer class="entry-footer"><span title='2026-02-10 09:34:51 +0800 CST'>February 10, 2026</span></footer>
   <a class="entry-link" aria-label="post link to Leetcode 3719 - Longest Balanced Subarray I" href="https://richardlaiis.github.io/posts/leetcode-3719-longest-balanced-subarray-i/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Leetcode 1382 - Balance a Binary Search Tree
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>題目連結 https://leetcode.com/problems/balance-a-binary-search-tree/
-Approach 對原本的二元搜尋樹進行中序遍歷，把每個元素存入陣列中，如此一來陣列中的元素會是由小到大排序的。接著用遞迴的方式由這個陣列重建出一棵平衡的二元搜尋樹，就做好了。
-Code class Solution { private: void dfs(TreeNode* root, vector&lt;int&gt;&amp; arr) { if (!root) return; dfs(root-&gt;left, arr); arr.emplace_back(root-&gt;val); dfs(root-&gt;right, arr); } TreeNode* toBST(vector&lt;int&gt;&amp;arr, int start, int end) { if (start &gt; end) return NULL; int mid = (start &#43; end) / 2; TreeNode* res = new TreeNode(arr[mid]); res-&gt;left = toBST(arr, start, mid-1); res-&gt;right = toBST(arr, mid&#43;1, end); return res; } public: TreeNode* balanceBST(TreeNode* root) { vector&lt;int&gt; arr; dfs(root, arr); return toBST(arr, 0, arr.size() - 1); } }; </p>
-  </div>
-  <footer class="entry-footer"><span title='2026-02-09 09:17:27 +0800 CST'>February 9, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to Leetcode 1382 - Balance a Binary Search Tree" href="https://richardlaiis.github.io/posts/leetcode-1382-balance-a-binary-search-tree/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
