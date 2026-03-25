@@ -203,6 +203,20 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Leetcode 3546 - Equal Sum Grid Partition I
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>解法 基本上就是對於 row 跟 column 存 prefix sum，然後看當前累積的和有沒有機會等於全部元素的和除以 2。這是一題應該被放在簡單類別的中等題。
+class Solution { public: bool canPartitionGrid(vector&lt;vector&lt;int&gt;&gt;&amp; grid) { int m = grid.size(), n = grid[0].size(); long long sum = 0; for (auto i:grid) { for (auto j:i) sum &#43;= j; } if (sum &amp; 1) return false; sum &gt;&gt;= 1; long long cur_hor = 0; for (int i = 0; i &lt; m-1; i&#43;&#43;) { for (int j = 0; j &lt; n; j&#43;&#43;) cur_hor &#43;= grid[i][j]; if (cur_hor == sum) return true; } long long cur_ver = 0; for (int j = 0; j &lt; n-1; j&#43;&#43;) { for (int i = 0; i &lt; m; i&#43;&#43;) cur_ver &#43;= grid[i][j]; if (cur_ver == sum) return true; } return false; } }; 不知道標題要取什麼 之後想養成跑步的習慣，天氣跟時間允許的話就跑，code跟我至少要有一個是跑得動的～XD 感覺自己還在因為某些事造成的創傷所苦，希望趕快好起來！不然有的時候我真的好怕自己失去面對一切的動力，或許有時候我還是該跟人類說話，我不知道(?)
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-03-25 20:13:03 +0800 CST'>March 25, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to Leetcode 3546 - Equal Sum Grid Partition I" href="https://richardlaiis.github.io/posts/leetcode-3546-equal-sum-grid-partition-i/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Leetcode 2906 - Construct Product Matrix
     </h2>
   </header>
@@ -335,21 +349,6 @@ Code class Solution { public: double champagneTower(int poured, int query_row, i
   </div>
   <footer class="entry-footer"><span title='2026-02-14 16:50:10 +0800 CST'>February 14, 2026</span></footer>
   <a class="entry-link" aria-label="post link to Leetcode 799 - Champagne Tower" href="https://richardlaiis.github.io/posts/leetcode-799-champagne-tower/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Leetcode 3719 - Longest Balanced Subarray I
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Intuition Just brute force as the hints said, but unfortunately I got TLE, so this method is too slow QAQ
-而且這其實也是錯的，進到 inner loop 前也要把 nums[i] 加入 odd 或 even，我忘了加。
-class Solution { public: int longestBalanced(vector&lt;int&gt;&amp; nums) { int n = nums.size(); int ans = 0; for (int i = 0; i &lt; n-1; i&#43;&#43;) { for (int j = i&#43;1; j &lt; n; j&#43;&#43;) { unordered_set&lt;int&gt; odd, even; for (int k = i; k &lt;= j; k&#43;&#43;) { if (nums[k] &amp; 1) odd.insert(nums[k]); else even.insert(nums[k]); } if (odd.size() == even.size()) ans = max(ans, j-i&#43;1); } } return ans; } }; Approach 一樣是暴力，只是紀錄奇偶元素數量的 set 可以被沿用。（然後用 hash map 應該會跑得比較快，不過一樣可以過，所以我懶得改 :p）
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-02-10 09:34:51 +0800 CST'>February 10, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to Leetcode 3719 - Longest Balanced Subarray I" href="https://richardlaiis.github.io/posts/leetcode-3719-longest-balanced-subarray-i/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
