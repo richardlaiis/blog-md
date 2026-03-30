@@ -1,7 +1,7 @@
 ---
 date: '2026-03-30T19:51:27+08:00'
 draft: false
-title: 'Leetcode 2840 - Check if Strings Can Be Made Equal With Operations'
+title: 'Leetcode 2840 - Check if Strings Can Be Made Equal With Operations II'
 ---
 ## Approach
 + Use hash table to record the frequency of each character of s1 and s2.

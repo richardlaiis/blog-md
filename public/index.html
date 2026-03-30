@@ -203,14 +203,14 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Leetcode 2840 - Check if Strings Can Be Made Equal With Operations
+    <h2 class="entry-hint-parent">Leetcode 2840 - Check if Strings Can Be Made Equal With Operations II
     </h2>
   </header>
   <div class="entry-content">
     <p>Approach Use hash table to record the frequency of each character of s1 and s2. Note that only the position with same parity can be swapped, if two strings’ sets of odd-position charaters are the same, they must can be permuted using finite number of transpositions. Code class Solution { public: bool checkStrings(string s1, string s2) { int n = s1.length(); vector&lt;int&gt; s1_odd(26, 0), s1_even(26, 0), s2_odd(26, 0), s2_even(26, 0); for (int i = 0 ; i &lt; n; i&#43;&#43;) { if (i &amp; 1) { s1_odd[s1[i]-&#39;a&#39;]&#43;&#43;; s2_odd[s2[i]-&#39;a&#39;]&#43;&#43;; } else { s1_even[s1[i]-&#39;a&#39;]&#43;&#43;; s2_even[s2[i]-&#39;a&#39;]&#43;&#43;; } } for (int i = 0; i &lt; 26; i&#43;&#43;) { if (s1_odd[i] != s2_odd[i] || s1_even[i] != s2_even[i]) return false; } return true; } }; </p>
   </div>
   <footer class="entry-footer"><span title='2026-03-30 19:51:27 +0800 CST'>March 30, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to Leetcode 2840 - Check if Strings Can Be Made Equal With Operations" href="https://richardlaiis.github.io/posts/leetcode-2840-check-if-strings-can-be-made-equal-with-operations/"></a>
+  <a class="entry-link" aria-label="post link to Leetcode 2840 - Check if Strings Can Be Made Equal With Operations II" href="https://richardlaiis.github.io/posts/leetcode-2840-check-if-strings-can-be-made-equal-with-operations-ii/"></a>
 </article>
 
 <article class="post-entry"> 

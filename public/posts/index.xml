@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 30 Mar 2026 19:51:27 +0800</lastBuildDate>
     <atom:link href="https://richardlaiis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Leetcode 2840 - Check if Strings Can Be Made Equal With Operations</title>
-      <link>https://richardlaiis.github.io/posts/leetcode-2840-check-if-strings-can-be-made-equal-with-operations/</link>
+      <title>Leetcode 2840 - Check if Strings Can Be Made Equal With Operations II</title>
+      <link>https://richardlaiis.github.io/posts/leetcode-2840-check-if-strings-can-be-made-equal-with-operations-ii/</link>
       <pubDate>Mon, 30 Mar 2026 19:51:27 +0800</pubDate>
-      <guid>https://richardlaiis.github.io/posts/leetcode-2840-check-if-strings-can-be-made-equal-with-operations/</guid>
+      <guid>https://richardlaiis.github.io/posts/leetcode-2840-check-if-strings-can-be-made-equal-with-operations-ii/</guid>
       <description>&lt;h2 id=&#34;approach&#34;&gt;Approach&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Use hash table to record the frequency of each character of s1 and s2.&lt;/li&gt;
