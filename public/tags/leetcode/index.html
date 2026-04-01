@@ -147,6 +147,20 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Leetcode 2751 - Robot Collisions
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Approach 將機器人的 index 依照位置排序，如果一個機器人往右衝就把它丟進 stack，反之，如果一個機器人往左衝，就一直跟 stack 裡面的機器人比較生命值，直到自己的生命值歸零/在較量中輸了或是 stack 已經清空。
+AC Code class Solution { public: vector&lt;int&gt; survivedRobotsHealths(vector&lt;int&gt;&amp; positions, vector&lt;int&gt;&amp; healths, string directions) { int n = positions.size(); vector&lt;int&gt; idx(n), res; stack&lt;int&gt; stack; for (int i = 0; i &lt; n; i&#43;&#43;) { idx[i] = i; } sort(idx.begin(), idx.end(), [&amp;](int a, int b) { return positions[a] &lt; positions[b]; }); for (int cur:idx) { if (directions[cur] == &#39;R&#39;) { stack.push(cur); } else { while (!stack.empty() &amp;&amp; healths[cur] &gt; 0) { int topIdx = stack.top(); stack.pop(); if (healths[topIdx] &gt; healths[cur]) { healths[topIdx]--; healths[cur]=0; stack.push(topIdx); } else if (healths[topIdx] &lt; healths[cur]) { healths[cur]--; healths[topIdx] = 0; } else { healths[topIdx]=0; healths[cur]=0; } } } } for (int i = 0; i &lt; n; i&#43;&#43;) { if (healths[i] &gt; 0) { res.emplace_back(healths[i]); } } return res; } }; Happy April Fool’s Day! 愚人節快樂，還蠻開心的，因為這是一年當中為我量身打造的節日，畢竟我本就是愚人:)
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-04-01 09:52:33 +0800 CST'>April 1, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to Leetcode 2751 - Robot Collisions" href="https://richardlaiis.github.io/posts/leetcode-2751-robot-collisions/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Leetcode 2906 - Construct Product Matrix
     </h2>
   </header>
@@ -268,21 +282,12 @@ Code class Solution { public: bool isTrionic(vector&lt;int&gt;&amp; nums) { int 
   <footer class="entry-footer"><span title='2026-02-03 09:06:58 +0800 CST'>February 3, 2026</span></footer>
   <a class="entry-link" aria-label="post link to LeetCode 3637 - Trionic Array I" href="https://richardlaiis.github.io/posts/leetcode-3637-trionic-array-i/"></a>
 </article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Leetcode 1509 - Minimum Difference Between Largest and Smallest Value in Three Moves
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Approach 有 4 種方式去移除三個元素，在將陣列由小至大排序後：
-移除前三個元素 移除前兩個元素，以及尾端一個元素 移除第一個元素，以及尾端兩個元素 移除最後面三個元素 而這四種 case 最大最小值的 difference 很容易就可以推出來了，如程式碼所示。
-Code class Solution { public: int minDifference(vector&lt;int&gt;&amp; nums) { sort(nums.begin(), nums.end()); int n = nums.size(); if (n &lt;= 4) return 0; int res = 2e9; for (int l = 0, r = n-4; l &lt; 4; l&#43;&#43;, r&#43;&#43;) { res = min(res, nums[r]-nums[l]); } return res; } }; untitled 常常，我們誰不都是老犯同一個毛病，以一種自以為是並且蠻橫的方式去愛眼前的人，卻不知道眼前的人所渴望的，有時候不過是一個善意的牽引，一場低調的擺渡和一份體貼的成全，就好像我們根本不知道，張國榮在決定放棄對紅塵聲色的眷戀從酒店墜下之前，是如何地將自己關押在情緒的寒流裡哆嗦，在風光背後，摸索著比黑暗更黑暗的黑暗，卻永遠等不到詭異的天色，也許很快就會破曉。── 范俊奇《鏤空與浮雕》(星之全蝕)
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-02-02 08:52:21 +0800 CST'>February 2, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to Leetcode 1509 - Minimum Difference Between Largest and Smallest Value in Three Moves" href="https://richardlaiis.github.io/posts/leetcode-minimum-difference-between-largest-and-smallest-value-in-three-moves/"></a>
-</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="next" href="https://richardlaiis.github.io/tags/leetcode/page/2/">Next&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
     </main>
     
 <footer class="footer">

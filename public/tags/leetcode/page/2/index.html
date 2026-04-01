@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Posts | laiyuchi 的破紙箱</title>
+<title>LeetCode | laiyuchi 的破紙箱</title>
 <meta name="keywords" content="">
-<meta name="description" content="Posts - laiyuchi 的破紙箱">
+<meta name="description" content="">
 <meta name="author" content="">
-<link rel="canonical" href="https://richardlaiis.github.io/posts/">
+<link rel="canonical" href="https://richardlaiis.github.io/tags/leetcode/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://richardlaiis.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://richardlaiis.github.io/favicon-16x16.png">
@@ -18,8 +18,8 @@
 <link rel="mask-icon" href="https://richardlaiis.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://richardlaiis.github.io/posts/index.xml" title="rss">
-<link rel="alternate" hreflang="en" href="https://richardlaiis.github.io/posts/">
+<link rel="alternate" type="application/rss+xml" href="https://richardlaiis.github.io/tags/leetcode/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="https://richardlaiis.github.io/tags/leetcode/">
 <noscript>
     <style>
         #theme-toggle,
@@ -71,30 +71,15 @@
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script><meta property="og:url" content="https://richardlaiis.github.io/posts/">
+</script><meta property="og:url" content="https://richardlaiis.github.io/tags/leetcode/">
   <meta property="og:site_name" content="laiyuchi 的破紙箱">
-  <meta property="og:title" content="Posts">
+  <meta property="og:title" content="LeetCode">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Posts">
+  <meta name="twitter:title" content="LeetCode">
 
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://richardlaiis.github.io/posts/"
-    }
-  ]
-}
-</script>
 </head>
 <body class="list" id="top">
     <header class="header">
@@ -156,42 +141,27 @@
 <main class="main"> 
 <header class="page-header">
   <h1>
-    Posts
+    LeetCode
   </h1>
 </header>
 
-<article class="post-entry"> 
+<article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Leetcode 744 - Find Smallest Letter Greater Than Target
+    <h2 class="entry-hint-parent">Leetcode 1509 - Minimum Difference Between Largest and Smallest Value in Three Moves
     </h2>
   </header>
   <div class="entry-content">
-    <p>Approach Binary search on the location of first letter greater than target. (Using built-in upperbound function in C&#43;&#43; is good as well)
-Solution class Solution { public: char nextGreatestLetter(vector&lt;char&gt;&amp; letters, char target) { int lo = 0, hi = letters.size() - 1; char res = letters[0]; while (lo &lt;= hi) { int mid = (lo &#43; hi) / 2; if (letters[mid]-target &gt; 0) res = letters[mid], hi = mid-1; else lo = mid&#43;1; } return res; } }; 心得 之後打算把 LeetCode 每日問題的解法丟上來，希望有朝一日能進 Google X)
-話說要怎麼幫 github page 設定 custom domain，我想好好利用系上提供的免費的 csie.org QQ 但不知道為什麼弄不好，打 A Record 會是爛的，希望改成 CNAME 後 DNS checking 能成功XD
+    <p>Approach 有 4 種方式去移除三個元素，在將陣列由小至大排序後：
+移除前三個元素 移除前兩個元素，以及尾端一個元素 移除第一個元素，以及尾端兩個元素 移除最後面三個元素 而這四種 case 最大最小值的 difference 很容易就可以推出來了，如程式碼所示。
+Code class Solution { public: int minDifference(vector&lt;int&gt;&amp; nums) { sort(nums.begin(), nums.end()); int n = nums.size(); if (n &lt;= 4) return 0; int res = 2e9; for (int l = 0, r = n-4; l &lt; 4; l&#43;&#43;, r&#43;&#43;) { res = min(res, nums[r]-nums[l]); } return res; } }; untitled 常常，我們誰不都是老犯同一個毛病，以一種自以為是並且蠻橫的方式去愛眼前的人，卻不知道眼前的人所渴望的，有時候不過是一個善意的牽引，一場低調的擺渡和一份體貼的成全，就好像我們根本不知道，張國榮在決定放棄對紅塵聲色的眷戀從酒店墜下之前，是如何地將自己關押在情緒的寒流裡哆嗦，在風光背後，摸索著比黑暗更黑暗的黑暗，卻永遠等不到詭異的天色，也許很快就會破曉。── 范俊奇《鏤空與浮雕》(星之全蝕)
 </p>
   </div>
-  <footer class="entry-footer"><span title='2026-01-31 09:38:05 +0800 CST'>January 31, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to Leetcode 744 - Find Smallest Letter Greater Than Target" href="https://richardlaiis.github.io/posts/leetcode-find-smallest-letter-greater-than-target/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Myfirstpost
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>hahahahahahaha ehehehehehe
-破房 我是一個 GPA 3.4 的可悲台大資工大二生，阿哈哈哈哈哈哈。
-教授這裡風好大
-code #include &lt;stdio.h&gt; int main() { printf(&#34;Hello, world!\n&#34;); } </p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-30 16:42:54 +0800 CST'>January 30, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to Myfirstpost" href="https://richardlaiis.github.io/posts/myfirstpost/"></a>
+  <footer class="entry-footer"><span title='2026-02-02 08:52:21 +0800 CST'>February 2, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to Leetcode 1509 - Minimum Difference Between Largest and Smallest Value in Three Moves" href="https://richardlaiis.github.io/posts/leetcode-minimum-difference-between-largest-and-smallest-value-in-three-moves/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
-    <a class="prev" href="https://richardlaiis.github.io/posts/page/2/">
+    <a class="prev" href="https://richardlaiis.github.io/tags/leetcode/">
       «&nbsp;Prev&nbsp;
     </a>
   </nav>

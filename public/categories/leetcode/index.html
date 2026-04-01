@@ -147,6 +147,20 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Leetcode 2751 - Robot Collisions
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Approach 將機器人的 index 依照位置排序，如果一個機器人往右衝就把它丟進 stack，反之，如果一個機器人往左衝，就一直跟 stack 裡面的機器人比較生命值，直到自己的生命值歸零/在較量中輸了或是 stack 已經清空。
+AC Code class Solution { public: vector&lt;int&gt; survivedRobotsHealths(vector&lt;int&gt;&amp; positions, vector&lt;int&gt;&amp; healths, string directions) { int n = positions.size(); vector&lt;int&gt; idx(n), res; stack&lt;int&gt; stack; for (int i = 0; i &lt; n; i&#43;&#43;) { idx[i] = i; } sort(idx.begin(), idx.end(), [&amp;](int a, int b) { return positions[a] &lt; positions[b]; }); for (int cur:idx) { if (directions[cur] == &#39;R&#39;) { stack.push(cur); } else { while (!stack.empty() &amp;&amp; healths[cur] &gt; 0) { int topIdx = stack.top(); stack.pop(); if (healths[topIdx] &gt; healths[cur]) { healths[topIdx]--; healths[cur]=0; stack.push(topIdx); } else if (healths[topIdx] &lt; healths[cur]) { healths[cur]--; healths[topIdx] = 0; } else { healths[topIdx]=0; healths[cur]=0; } } } } for (int i = 0; i &lt; n; i&#43;&#43;) { if (healths[i] &gt; 0) { res.emplace_back(healths[i]); } } return res; } }; Happy April Fool’s Day! 愚人節快樂，還蠻開心的，因為這是一年當中為我量身打造的節日，畢竟我本就是愚人:)
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-04-01 09:52:33 +0800 CST'>April 1, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to Leetcode 2751 - Robot Collisions" href="https://richardlaiis.github.io/posts/leetcode-2751-robot-collisions/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Leetcode 1886 - Determine Whether Matrix Can Be Obtained by Rotation
     </h2>
   </header>
@@ -269,21 +283,6 @@ Code class Solution { public: int minDifference(vector&lt;int&gt;&amp; nums) { s
   </div>
   <footer class="entry-footer"><span title='2026-02-02 08:52:21 +0800 CST'>February 2, 2026</span></footer>
   <a class="entry-link" aria-label="post link to Leetcode 1509 - Minimum Difference Between Largest and Smallest Value in Three Moves" href="https://richardlaiis.github.io/posts/leetcode-minimum-difference-between-largest-and-smallest-value-in-three-moves/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Leetcode 3010 - Divide an Array Into Subarrays With Minimum Cost I
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Approach To minimize the total cost, we need to partition the array using the three smallest elements. However, since the first element is always included, the final answer is simply the first element plus the two smallest elements from the rest of the array.
-In my code, I sort the array (excluding the first element) using built-in sort() function, but there might be other methods with better time complexity.
-Code class Solution { public: int minimumCost(vector&lt;int&gt;&amp; nums) { sort(nums.begin() &#43; 1, nums.end()); return nums[0] &#43; nums[1] &#43; nums[2]; } }; uwu 我把 richardlaiis.csie.org (新的網址) 綁到 richardlaiis.github.io (原網址) 了，比我想像中的簡單很多～ 好希望趕快開學;)
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-02-01 08:50:58 +0800 CST'>February 1, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to Leetcode 3010 - Divide an Array Into Subarrays With Minimum Cost I" href="https://richardlaiis.github.io/posts/leetcode-divide-an-array-into-subarrays-with-minimum-cost-i/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
