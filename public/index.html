@@ -2,7 +2,7 @@
 <html lang="en" dir="auto" data-theme="auto">
 
 <head>
-	<meta name="generator" content="Hugo 0.157.0"><meta charset="utf-8">
+	<meta name="generator" content="Hugo 0.160.1"><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="canonical" href="https://richardlaiis.github.io/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.199042e659bc7245f5609d333d6c044eb554a0640849bb874e1dff8eb0f57209.css" integrity="sha256-GZBC5lm8ckX1YJ0zPWwETrVUoGQISbuHTh3/jrD1cgk=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://richardlaiis.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://richardlaiis.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://richardlaiis.github.io/favicon-32x32.png">
@@ -203,6 +203,20 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Leetcode 1391 - Check if There Is a Valid Path in a Grid
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Approach BFS，但在做的時候需要去確認下一格是否有與當前的格子連接。
+Code class Solution { public: bool hasValidPath(vector&lt;vector&lt;int&gt;&gt;&amp; grid) { int m = grid.size(); int n = grid[0].size(); vector&lt;vector&lt;pair&lt;int,int&gt;&gt;&gt; dir(7); dir[1] = {{0, -1}, {0, 1}}; // l, r dir[2] = {{-1, 0}, {1, 0}}; // u, d dir[3] = {{0, -1}, {1, 0}}; // l, d dir[4] = {{0, 1}, {1, 0}}; // r, d dir[5] = {{0, -1}, {-1, 0}}; // l, u dir[6] = {{0, 1}, {-1, 0}}; // r, u queue&lt;pair&lt;int,int&gt;&gt; q; vector&lt;vector&lt;bool&gt;&gt; vis(m, vector&lt;bool&gt;(n, 0)); q.push({0, 0}); vis[0][0] = 1; while (!q.empty()) { auto [r, c] = q.front(); q.pop(); if (r == m-1 &amp;&amp; c == n-1) return true; for (auto [dr, dc]:dir[grid[r][c]]) { int nr = r&#43;dr; int nc = c&#43;dc; if (nr &lt; 0 || nc &lt; 0 || nr &gt;= m || nc &gt;= n || vis[nr][nc]) { continue; } for (auto [bdr, bdc]:dir[grid[nr][nc]]) { int rr = nr&#43;bdr; // reverse check int rc = nc&#43;bdc; if (rr == r &amp;&amp; rc == c) { vis[nr][nc] = 1; q.push({nr, nc}); } } } } return false; } }; murmur 好久沒更新了，我覺得自己情緒控管還是有待加強，太容易被某些事情激怒或弄哭了。或許哭不是件壞事，但生氣絕對是百害而無一利，因為我生氣的對象通常也是我很敬愛的人，而就算自己不傷人，也依然會被人尖銳的言語所刺傷。所以至少不要在別人面前生氣，最好不要展露任何情緒比較好。
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-04-27 13:07:28 +0800 CST'>April 27, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to Leetcode 1391 - Check if There Is a Valid Path in a Grid" href="https://richardlaiis.github.io/posts/leetcode-1391-check-if-there-is-a-valid-path-in-a-grid/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Leetcode 2751 - Robot Collisions
     </h2>
   </header>
@@ -333,20 +347,6 @@ Code # Definition for a binary tree node. # class TreeNode: # def __init__(self,
   </div>
   <footer class="entry-footer"><span title='2026-02-18 14:28:07 +0800 CST'>February 18, 2026</span></footer>
   <a class="entry-link" aria-label="post link to LeetCode 693 - Binary Number With Alternating Bits" href="https://richardlaiis.github.io/posts/leetcode-693-binary-number-with-alternating-bits/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Leetcode 401 - Binary Watch
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Approach 1 - Classic Enumeration 把所有小時、分鐘的組合列出來，然後看他們的 set bit 的數量加起來是不是 turnedOn。這是我一開始想到的作法，此外似乎 C&#43;&#43; 20 就開始有 std::format() 可以用了，還蠻酷的:) 我第一次使用
-AC Code class Solution { public: vector&lt;string&gt; readBinaryWatch(int turnedOn) { vector&lt;string&gt; ans; for (int h = 0; h &lt; 12; h&#43;&#43;) { for (int m = 0; m &lt; 60; m&#43;&#43;) { int t1 = __builtin_popcount(h); int t2 = __builtin_popcount(m); if (t1&#43;t2 == turnedOn) { string time = std::format(&#34;{}:{:02}&#34;, h, m); ans.push_back(time); } } } return ans; } }; Approach 2 - Binary Enumeration 這是官解提供的作法之一，因為小時跟分鐘加起來有 10 個 bits，所以有 2^10=1024 種可能性，我們可以透過枚舉 0~1024 的 i，i 從 MSB 開始數四位是小時，剩下六位是分鐘，透過基本的位元運算以及 Approach 1 的一些觀念就可以做出來了。anyway 這題非常簡單，依然是不用動腦的 Easy 類別。
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-02-17 11:42:06 +0800 CST'>February 17, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to Leetcode 401 - Binary Watch" href="https://richardlaiis.github.io/posts/leetcode-401-binary-watch/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
